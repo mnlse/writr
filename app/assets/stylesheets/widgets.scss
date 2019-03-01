@@ -1,0 +1,101 @@
+$black-border: #000;
+$red-border: #ab1212;
+
+$post-odd-hover-color: #eddede;
+$post-even-hover-color: #e7e7e7;
+
+$gray-border: #c4c4c4;
+$footer-links-color: #b5b5b5;
+
+.col-posts-body {
+}
+
+.col-widgets {
+  padding: 1rem;
+
+}
+
+.popular-now-widget {
+  font-size: 120%;
+
+  &__main-header {
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid $gray-border;
+  }
+}
+
+.widget-post {
+  .widget-post-title {
+    font-weight: 300;
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+  .widget-post-data {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      width: 100%;
+      position: relative;
+      font-size: 0.9rem;
+      font-style: italic;
+      display: block;
+      text-align: center;
+      align-items: center;
+    }
+
+    span:first-child {
+      text-align: left;
+    }
+
+    span:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 1px;
+      background: black;
+      right: -2px;
+    }
+  }
+}
+
+.popular-now-down-button-container {
+  text-align: center;
+  padding: 1rem 0;
+
+  .popular-now-down-button {
+    font-size: 3rem;
+  }
+}
+
+.top-rated-down-button-container {
+  text-align: center;
+  padding: 1rem 0;
+
+  .top-rated-down-button {
+    font-size: 3rem;
+  }
+}
+
+
+.top-rated-widget {
+  &__mainer-header {
+    padding-bottom: 0.7rem;
+    border-bottom: 1px solid $gray-border;
+  }
+
+}
+
+.footer-widget {
+  color: $footer-links-color;
+
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer-copy {
+    text-align: center;
+    margin-top: 1rem;
+  }
+}

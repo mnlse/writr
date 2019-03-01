@@ -1,0 +1,153 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif", serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+}
+
+.header-top {
+  padding: 2rem;
+  display: flex;
+  .logo {
+    font-size: 2.5rem;
+    background: black;
+    padding: 0.7rem 1.7rem;
+    display: inline-block;
+    border-radius: 10px;
+    span {
+      color: white;
+    }
+  }
+  
+  .header-line-container {
+    flex: 2;
+    margin: 0 2rem;
+    position: relative;
+    overflow: hidden;
+    &:after {
+      top: 50%;
+      content: '';
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: $gray-border; 
+    }
+  }
+
+  .header-links-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header-links {
+    font-size: 24px;
+
+    a {
+      margin: 0 0.7rem;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        height: 1px;
+        background: $red-border;
+        bottom: -2px;
+        left: 0;
+        transition: width 0.5s;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+  }
+}
+
+.category-links-container {
+  background: #e1e0e0;
+  padding: 1rem;
+  font-size: 1.5rem;
+
+  &-inner {
+    margin: 0 auto;
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.advertisement-square-top {
+  background: gray;
+  width: 336px;
+  height: 280px;
+}
+
+.main-body {
+  padding: 2rem 1rem;
+  display: flex;
+}
+
+.post {
+  display: flex;
+  padding: 1rem 0;
+  .post-header {
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+  }
+
+  .post-data {
+    padding-top: 0.5rem;
+
+    .post-data-item:first-child {
+      padding-right: 0.5rem;
+    }
+
+    .post-data-item:not(:first-child) {
+      padding: 0 0.5rem;
+    }
+
+    .post-data-item:not(:last-child) {
+      border-right: 1px solid $gray-border;
+    }
+  }
+
+  .post-right {
+    padding-left: 1rem;
+  }
+
+  .post-body {
+    padding: 1rem 0;
+  }
+
+  .post-image {
+    width: 200px;
+    background: red;
+  }
+
+  &:nth-child(even) {
+    border-left: 10px solid $black-border;
+    &:hover {
+      background-color: $post-even-hover-color;
+    }
+  }
+
+  &:nth-child(odd) {
+    border-left: 10px solid $red-border;
+    &:hover {
+      background-color: $post-odd-hover-color;
+    }
+  }
+}
