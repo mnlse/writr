@@ -60,7 +60,8 @@
           %span.author John Doe
       
       .popular-now-down-button-container
-        %i.fas.fa-angle-down.popular-now-down-button
+        %a.down-arrow-button.popular-now-down-button{ :href => "#" }
+          %i.fas.fa-angle-down
 
     .top-rated-widget
       %h1.top-rated-widget__main-header
@@ -73,11 +74,12 @@
           %span.author John Doe
 
       .top-rated-down-button-container
-        %i.fas.fa-angle-down.top-rated-down-button
+        %a.top-rated-down-button.down-arrow-button{ :href => "#" }
+          %i.fas.fa-angle-down
 
     %footer.footer-widget
 
-      .footer-links
+      .widget-footer-links
         %a{ :href => "#" } About
         %a{ :href => "#" } About
         %a{ :href => "#" } About
