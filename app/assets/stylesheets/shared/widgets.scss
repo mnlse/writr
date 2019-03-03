@@ -1,18 +1,30 @@
 .widget-post {
+  margin: 1.6rem 0;
+
+  .widget-post-category {
+    font-family: "PT Sans";
+    font-size: 0.9rem;
+    color: $widget-post-additional-info-color;
+  }
+
   .widget-post-title {
     font-weight: 300;
-    font-size: 1.5rem;
+    font-size: 1.1rem;
+    margin-top: 0;
     margin-bottom: 0.4rem;
+    text-align: justify;
   }
+
   .widget-post-data {
+    font-family: "PT Sans";
     display: flex;
     justify-content: space-between;
 
     span {
-      width: 100%;
+      color: $widget-post-additional-info-color;
       position: relative;
+      flex: 33;
       font-size: 0.9rem;
-      font-style: italic;
       display: block;
       text-align: center;
       align-items: center;
@@ -27,8 +39,10 @@
       position: absolute;
       height: 100%;
       width: 1px;
-      background: black;
+      background: $widget-post-additional-info-color;
       right: -2px;
+    }
+    span:first-child::after {
     }
   }
 }
@@ -55,6 +69,7 @@
   font-size: 120%;
 
   &__main-header {
+    font-size: 2rem;
     padding-bottom: 0.7rem;
     border-bottom: 1px solid $gray-border;
   }
@@ -62,6 +77,7 @@
 
 .top-rated-widget {
   &__main-header {
+    font-size: 2rem;
     padding-bottom: 0.7rem;
     border-bottom: 1px solid $gray-border;
   }

@@ -4,8 +4,10 @@
   .col-posts-body
     .post
       .post-left
-        = image_tag asset_path("post_sample_image.png"), class: "post-image"
+        %a.post-image-container{ :href => pages_view_article_path }
+          = image_tag asset_path("post_sample_image.png"), class: "post-image"
       .post-right
+        .post-category Books
         %h1.post-header
           = link_to "Go to view page", pages_view_article_path
         .post-data
@@ -16,10 +18,12 @@
           Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. Consequuntur tempora ipsa perspiciatis nemo inventore
     .post
       .post-left
-        = image_tag asset_path("post_sample_image.png"), class: "post-image"
+        %a.post-image-container{ :href => pages_view_article_path }
+          = image_tag asset_path("post_sample_image.png"), class: "post-image"
       .post-right
+        .post-category Books
         %h1.post-header
-          Hello World 
+          = link_to "Go to view page", pages_view_article_path
         .post-data
           %span.post-data-item Adipisicing sds
           %span.post-data-item 5 min read
@@ -28,10 +32,12 @@
           Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. Consequuntur tempora ipsa perspiciatis nemo inventore
     .post
       .post-left
-        = image_tag asset_path("post_sample_image.png"), class: "post-image"
+        %a.post-image-container{ :href => pages_view_article_path }
+          = image_tag asset_path("post_sample_image.png"), class: "post-image"
       .post-right
+        .post-category Books
         %h1.post-header
-          Hello World 
+          = link_to "Go to view page", pages_view_article_path
         .post-data
           %span.post-data-item Adipisicing sds
           %span.post-data-item 5 min read
@@ -47,12 +53,14 @@
       %h1.popular-now-widget__main-header Popular Now
 
       .widget-post
+        %span.widget-post-category Books
         %h1.widget-post-title Ipsum dolorem delectus nostrum
         .widget-post-data
           %span.star-rating Amet nemo 
           %span.reading-time 5 min read
           %span.author John Doe
       .widget-post
+        %span.widget-post-category Books
         %h1.widget-post-title Ipsum dolorem delectus nostrum
         .widget-post-data
           %span.star-rating Amet nemo 
@@ -67,6 +75,7 @@
       %h1.top-rated-widget__main-header
         Top Rated
       .widget-post
+        %span.widget-post-category Books
         %h1.widget-post-title Ipsum dolorem delectus nostrum
         .widget-post-data
           %span.star-rating Amet nemo 

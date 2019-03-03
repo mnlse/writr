@@ -2,9 +2,10 @@
 
 @import 'variables';
 
-@import 'widgets';
+@import 'shared/widgets';
 
 @import 'shared/header';
+@import 'shared/footer';
 
 @import 'front_page';
 @import 'view_article';

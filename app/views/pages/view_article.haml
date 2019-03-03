@@ -17,14 +17,14 @@
   .view-article-main-container
     .view-article-widget-container
 
-      .recent-posts-by-author-widget
+      .recent-posts-by-author-widget.view-article-recent-posts-by-author-widget
         .recent-posts-by-author-widget-header-container
           %h1.recent-posts-by-author-widget-header Recent Posts by Author
           .recent-posts-by-author-widget-name
             Matthew Nielsen
 
         .widget-post
-          %h1.widget-post-title Ipsum dolorem delectus nostrum
+          %h1.widget-post-title A Guide to Using Sauna to Increase Your Health and Longevity
           .widget-post-data
             %span.star-rating Amet nemo 
             %span.reading-time 5 min read
@@ -32,7 +32,7 @@
 
       .premium-advertisement
         = image_tag asset_path("premium_banner.png"), class: "premium-advertisement-image"
-      .popular-now-widget
+      .popular-now-widget.view-article-popular-now-widget
         %h1.popular-now-widget__main-header Popular Now
 
         .widget-post
@@ -52,11 +52,11 @@
           %a.popular-now-down-button.down-arrow-button{ :href => "#" }
             %i.fas.fa-angle-down
 
-      .top-rated-widget
+      .top-rated-widget.view-article-top-rated-widget
         %h1.top-rated-widget__main-header
           Top Rated
         .widget-post
-          %h1.widget-post-title Ipsum dolorem delectus nostrum
+          %h1.widget-post-title Ipsum dolorem delectus nostr
           .widget-post-data
             %span.star-rating Amet nemo 
             %span.reading-time 5 min read
@@ -71,8 +71,13 @@
       Adipisicing totam labore debitis nesciunt voluptates id amet? Recusandae quidem voluptatibus eaque nesciunt quibusdam similique Ducimus est aspernatur odit assumenda facilis Autem ut veritatis officiis maiores possimus! Ut laborum possimus officiis omnis nostrum! Quasi ea porro sit in praesentium Vel aliquid quas quisquam voluptatibus expedita fugit! Beatae maxime repellat labore qui nisi Laboriosam est iste voluptatum repellendus iste? Cupiditate aperiam aperiam eaque repellat culpa, amet. Delectus provident doloremque autem blanditiis iste! Expedita minima labore libero excepturi laboriosam Ipsam repellendus culpa reiciendis quae dicta tempora Doloribus qui error dicta natus odit Inventore ad amet error quia officiis nam Inventore quibusdam laborum reprehenderit repudiandae atque Non quos ut ab explicabo accusantium qui accusamus tempore? Molestias natus deserunt eum animi eligendi? Voluptates a autem similique totam reprehenderit vero aliquam Neque blanditiis ipsam delectus beatae aut similique Debitis obcaecati voluptatibus tenetur sed placeat Hic sit exercitationem fugiat soluta voluptatibus. Hic vel reiciendis porro culpa suscipit. Labore omnis nemo eveniet aspernatur laboriosam, asperiores Nostrum quo nobis dignissimos repudiandae natus Temporibus error natus corrupti vitae fugiat Harum ratione nobis reprehenderit impedit quia Minus tempora nemo expedita quo dolorem. Incidunt unde eligendi eligendi sit ex voluptatibus, voluptatum Similique corrupti obcaecati porro nobis minus Ducimus excepturi totam ad magnam nam. Explicabo aspernatur temporibus molestias fugiat aliquam, eligendi Eius aut maiores ipsum nostrum officia Veritatis architecto aliquam quam adipisci dolorem Alias repellendus impedit deserunt rem libero? Quam exercitationem laborum sint blanditiis asperiores Esse impedit repellendus aperiam nisi voluptas. Enim quo animi voluptate numquam architecto Assumenda minima sed dignissimos ullam eos impedit labore officiis, repellendus! Temporibus doloremque dolor ipsam ullam dolor. Commodi incidunt commodi repellat quae quo blanditiis. Numquam velit quo sed numquam sunt Beatae omnis expedita odio laudantium natus. Sapiente expedita eius eum in tempore. Cum ad nostrum ipsum rem ratione? Ullam sit illum inventore minus sunt Debitis iusto
       
 
-%footer.view-article-footer
-  %a{ :href => "#" } About
-  %a{ :href => "#" } About
-  %a{ :href => "#" } About
-  %a{ :href => "#" } About
+%footer.article-view-footer
+  .article-view-footer-inner
+    %a{ :href => "#" } Help
+    %a{ :href => "#" } Status
+    %a{ :href => "#" } Writers
+    %a{ :href => "#" } Blog
+    %a{ :href => "#" } Careers
+    %a{ :href => "#" } Privacy
+    %a{ :href => "#" } Terms
+    %a{ :href => "#" } About
