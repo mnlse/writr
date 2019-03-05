@@ -1,6 +1,6 @@
 @import 'vendor/normalize';
 
-@import 'variables';
+@import 'abstract/variables';
 
 @import 'shared/widgets';
 
@@ -9,3 +9,4 @@
 
 @import 'front_page';
 @import 'view_article';
+@import 'view_article_comment_section';

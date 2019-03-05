@@ -3,88 +3,45 @@
 .main-body
   .col-posts-body
     .post
-      .post-left
-        %a.post-image-container{ :href => pages_view_article_path }
-          = image_tag asset_path("post_sample_image.png"), class: "post-image"
-      .post-right
-        .post-category Books
+      .post__left
+        %a.post__img{ :href => pages_view_article_path }
+          = image_tag asset_path("post_sample_image.png")
+      .post__right
+        %a.post__catgr{ :href => "#" } Books
         %h1.post-header
           = link_to "Go to view page", pages_view_article_path
         .post-data
           %span.post-data-item Adipisicing sds
           %span.post-data-item 5 min read
-          %span.post-data-item John Doe
-        .post-body
-          Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. Consequuntur tempora ipsa perspiciatis nemo inventore
-    .post
-      .post-left
-        %a.post-image-container{ :href => pages_view_article_path }
-          = image_tag asset_path("post_sample_image.png"), class: "post-image"
-      .post-right
-        .post-category Books
-        %h1.post-header
-          = link_to "Go to view page", pages_view_article_path
-        .post-data
-          %span.post-data-item Adipisicing sds
-          %span.post-data-item 5 min read
-          %span.post-data-item John Doe
-        .post-body
-          Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. Consequuntur tempora ipsa perspiciatis nemo inventore
-    .post
-      .post-left
-        %a.post-image-container{ :href => pages_view_article_path }
-          = image_tag asset_path("post_sample_image.png"), class: "post-image"
-      .post-right
-        .post-category Books
-        %h1.post-header
-          = link_to "Go to view page", pages_view_article_path
-        .post-data
-          %span.post-data-item Adipisicing sds
-          %span.post-data-item 5 min read
-          %span.post-data-item John Doe
-        .post-body
-          Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. Consequuntur tempora ipsa perspiciatis nemo inventore
+          %span.post-data-item
+            %a{ :href => "#" } John Doe
+        %a.post-body{ :href => pages_view_article_path }
+          Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. 
 
   .col-widgets
     %aside.advertisement-square-top
       Hello
 
-    .popular-now-widget
-      %h1.popular-now-widget__main-header Popular Now
+    .pop-now-wgt
+      %h1.pop-now-wgt__main-header Popular Now
 
-      .widget-post
-        %span.widget-post-category Books
-        %h1.widget-post-title Ipsum dolorem delectus nostrum
-        .widget-post-data
-          %span.star-rating Amet nemo 
-          %span.reading-time 5 min read
-          %span.author John Doe
-      .widget-post
-        %span.widget-post-category Books
-        %h1.widget-post-title Ipsum dolorem delectus nostrum
-        .widget-post-data
-          %span.star-rating Amet nemo 
-          %span.reading-time 5 min read
-          %span.author John Doe
+      - 3.times do
+        = render 'shared/widget_post'
       
       .popular-now-down-button-container
         %a.down-arrow-button.popular-now-down-button{ :href => "#" }
-          %i.fas.fa-angle-down
+          = image_tag asset_path("down_arrow.svg")
 
     .top-rated-widget
       %h1.top-rated-widget__main-header
         Top Rated
-      .widget-post
-        %span.widget-post-category Books
-        %h1.widget-post-title Ipsum dolorem delectus nostrum
-        .widget-post-data
-          %span.star-rating Amet nemo 
-          %span.reading-time 5 min read
-          %span.author John Doe
+
+      - 3.times do
+        = render 'shared/widget_post'
 
       .top-rated-down-button-container
         %a.top-rated-down-button.down-arrow-button{ :href => "#" }
-          %i.fas.fa-angle-down
+          = image_tag asset_path("down_arrow.svg")
 
     %footer.footer-widget
 
@@ -95,3 +52,4 @@
         %a{ :href => "#" } About
       .footer-copy
         Copyright &copy; 2019 John Doe
+

@@ -26,10 +26,53 @@ a {
   display: flex;
   padding: 1rem 0;
 
-  .post-category {
-    color: #9e9e9e;
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__img {
+    display: block;
+    width: 200px;
+    overflow: hidden;
+    img {
+      width: 200px;
+      transform: scale(1);
+    }
+  }
+
+
+  &__right {
+    padding-left: 1rem;
+  }
+
+  &__catgr {
+    color: $category-fg;
     font-family: "PT Sans";
     font-size: 1.2rem;
+    position: relative;
+  }
+
+
+  .post-body {
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .post-cat:hover {
+    color: $category-hover-fg;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: black;
+      bottom: 1px;
+    }
   }
 
   .post-header {
@@ -41,7 +84,20 @@ a {
   .post-data {
     padding-top: 0.5rem;
     font-family: "PT Sans";
-    color: #707070;
+    color: $post-additional-info-fg;
+
+    .post-data-item {
+
+      a {
+        padding: 0 0.1rem;
+
+        &:hover {
+          color: $post-additional-info-link-hover;
+          border-bottom: 1px solid $post-additional-info-fg;
+        }
+      }
+
+    }
 
     .post-data-item:first-child {
       padding-right: 0.5rem;
@@ -54,26 +110,11 @@ a {
     .post-data-item:not(:last-child) {
       border-right: 1px solid $gray-border;
     }
-  }
 
-  .post-right {
-    padding-left: 1rem;
-  }
+    .post-data-item-author:hover {
+      border-bottom: 1px solid $gray-border;
 
-  .post-body {
-    padding: 1rem 0;
-  }
-
-  .post-image-container {
-    display: block;
-    width: 200px;
-    overflow: hidden;
-  }
-
-  .post-image {
-    width: 200px;
-    background: red;
-    transform: scale(1);
+    }
   }
 
   &:nth-child(even) {

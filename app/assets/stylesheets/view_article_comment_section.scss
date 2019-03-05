@@ -1,0 +1,126 @@
+.view-article-comment-section-container {
+  background: $interactive-panel-bg;
+  width: 100%;
+  height: 2000px;
+  margin-top: 3rem;
+
+  .comments-header {
+    font-weight: 300;
+    margin-left: 1rem;
+    padding-top: 0.5rem;
+  }
+
+  .comment {
+    display: flex;
+    margin: 2rem;
+    border-left: 1px solid $gray-border;
+    
+    .comment-left {
+      padding-left: 10px;
+
+      .comment-avatar-img-container {
+      }
+      .comment-avatar-img {
+        margin: 0 auto;
+        height: 60px;
+        width: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+    }
+
+
+    .comment-right {
+      padding: 0 1rem;
+      position: relative; 
+
+      .comment-name {
+        color: $comment-user-name-text;
+      }
+
+      .comment-text {
+
+      }
+
+      .comment-interactive-bar-container {
+        margin-top: 1rem;
+        display: flex;
+
+        & > *:first-child {
+          margin-left: 0;
+        }
+
+        & > * {
+          float: left;
+          margin: 0 1.3rem;
+          display: flex;
+          align-items: center;
+        }
+
+        span {
+          position: abolute;
+        }
+
+        .positive-vote-count {
+          color: green;
+        }
+
+      }
+
+      .comment-upvote-icon {
+        width: 24px;
+        opacity: 0.8;
+      }
+
+      .comment-downvote-icon {
+        width: 24px;
+        opacity: 0.8;
+      }
+
+    }
+
+  }
+
+  .cmt-reply {
+
+    &-form {
+      padding: 0 2.6rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    &-field {
+      background: rgba(0, 0, 0, 0.1);
+      border: 0;
+      padding: 0.3rem;
+      border-bottom: 1px solid lighten(#000, 72%);
+      position: relative;
+
+      &:focus {
+        outline: 0;
+      }
+    }
+
+    &-submit-btn {
+      align-self: flex-end;
+      border: 1px solid lighten(#000, 30%);
+      background: #000;
+      padding: 0.5rem 1rem;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: "PT Sans", sans-serif; 
+      margin-top: 0.4rem;
+
+      &:hover {
+        cursor: pointer;
+
+      }
+    }
+  }
+
+  .comment-reply {
+    margin-left: 4rem;
+  }
+
+}
+
