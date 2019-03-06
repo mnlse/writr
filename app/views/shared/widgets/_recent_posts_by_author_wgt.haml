@@ -1,0 +1,13 @@
+.recent-by-author-wgt
+  .recent-by-author-wgt__header
+    %h1.recent-by-author-wgt__header-main Recent Posts by Author
+    %h4.recent-by-author-wgt__subheader
+      Matthew Nielsen
+
+  .recent-by-author-wgt__body
+    - 3.times do
+      = render 'shared/widgets/widget_post'
+
+  .recent-by-author-wgt__btn-cont
+    %a.down-arrow-btn.recent-by-author-wgt__load-more-btn{ :href => "#" }
+      = image_tag asset_path("down_arrow.svg"), class: "down-arrow-btn-img"

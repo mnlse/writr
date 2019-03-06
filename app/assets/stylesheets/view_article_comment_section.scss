@@ -1,26 +1,27 @@
-.view-article-comment-section-container {
+.article-cmts {
   background: $interactive-panel-bg;
   width: 100%;
   height: 2000px;
   margin-top: 3rem;
 
-  .comments-header {
+  .cmts-header {
     font-weight: 300;
     margin-left: 1rem;
     padding-top: 0.5rem;
   }
 
-  .comment {
+  .cmt {
     display: flex;
     margin: 2rem;
     border-left: 1px solid $gray-border;
     
-    .comment-left {
+    &__left-col {
       padding-left: 10px;
 
-      .comment-avatar-img-container {
+      .cmt__avatar {
       }
-      .comment-avatar-img {
+
+      .cmt__avatar-img {
         margin: 0 auto;
         height: 60px;
         width: 60px;
@@ -30,54 +31,50 @@
     }
 
 
-    .comment-right {
+    &__right-col {
       padding: 0 1rem;
       position: relative; 
+    }
 
-      .comment-name {
-        color: $comment-user-name-text;
+    .cmt__name {
+      color: $comment-user-name-text;
+    }
+
+    .cmt__interactive {
+      margin-top: 1rem;
+      display: flex;
+
+      & > *:first-child {
+        margin-left: 0;
       }
 
-      .comment-text {
-
-      }
-
-      .comment-interactive-bar-container {
-        margin-top: 1rem;
+      & > * {
+        float: left;
+        margin: 0 1.3rem;
         display: flex;
-
-        & > *:first-child {
-          margin-left: 0;
-        }
-
-        & > * {
-          float: left;
-          margin: 0 1.3rem;
-          display: flex;
-          align-items: center;
-        }
-
-        span {
-          position: abolute;
-        }
-
-        .positive-vote-count {
-          color: green;
-        }
-
+        align-items: center;
       }
 
-      .comment-upvote-icon {
-        width: 24px;
-        opacity: 0.8;
+      span {
+        position: abolute;
       }
 
-      .comment-downvote-icon {
-        width: 24px;
-        opacity: 0.8;
+      .positive-vote-count {
+        color: green;
       }
 
     }
+
+    .cmt-upvote-icon {
+      width: 24px;
+      opacity: 0.8;
+    }
+
+    .cmt-downvote-icon {
+      width: 24px;
+      opacity: 0.8;
+    }
+
 
   }
 
@@ -118,7 +115,7 @@
     }
   }
 
-  .comment-reply {
+  .cmt-reply {
     margin-left: 4rem;
   }
 

@@ -3,53 +3,28 @@
 .main-body
   .col-posts-body
     .post
-      .post__left
-        %a.post__img{ :href => pages_view_article_path }
-          = image_tag asset_path("post_sample_image.png")
-      .post__right
+      .post__left-col
+        %a.post__img-link{ :href => pages_view_article_path }
+          = image_tag asset_path("post_sample_image.png"), class: "post__img"
+      .post__right-col
         %a.post__catgr{ :href => "#" } Books
-        %h1.post-header
+        %h1.post__header
           = link_to "Go to view page", pages_view_article_path
-        .post-data
-          %span.post-data-item Adipisicing sds
-          %span.post-data-item 5 min read
-          %span.post-data-item
+        .post__data
+          %span.post__data-item Adipisicing sds
+          %span.post__data-item 5 min read
+          %span.post__data-item
             %a{ :href => "#" } John Doe
-        %a.post-body{ :href => pages_view_article_path }
+        %a.post__body{ :href => pages_view_article_path }
           Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus adipisci rem explicabo voluptate minima. 
 
-  .col-widgets
-    %aside.advertisement-square-top
-      Hello
+  .widgets-col
+    %aside.ad-wgt
+      %a.ad-wgt__link{ :href => "#" }
+        = image_tag asset_path("sample_ad.jpeg"), class: "ad-wgt__img"
 
-    .pop-now-wgt
-      %h1.pop-now-wgt__main-header Popular Now
+    = render 'shared/widgets/pop_now_wgt'
 
-      - 3.times do
-        = render 'shared/widget_post'
-      
-      .popular-now-down-button-container
-        %a.down-arrow-button.popular-now-down-button{ :href => "#" }
-          = image_tag asset_path("down_arrow.svg")
+    = render 'shared/widgets/top_rated_wgt'
 
-    .top-rated-widget
-      %h1.top-rated-widget__main-header
-        Top Rated
-
-      - 3.times do
-        = render 'shared/widget_post'
-
-      .top-rated-down-button-container
-        %a.top-rated-down-button.down-arrow-button{ :href => "#" }
-          = image_tag asset_path("down_arrow.svg")
-
-    %footer.footer-widget
-
-      .widget-footer-links
-        %a{ :href => "#" } About
-        %a{ :href => "#" } About
-        %a{ :href => "#" } About
-        %a{ :href => "#" } About
-      .footer-copy
-        Copyright &copy; 2019 John Doe
-
+    = render 'shared/widgets/footer_wgt'

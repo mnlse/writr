@@ -1,7 +1,10 @@
-.header-top {
-  padding: 2rem;
-  display: flex;
-  .logo {
+.header {
+  &__top {
+    padding: 2rem;
+    display: flex;
+  }
+
+  &__logo {
     font-size: 2.5rem;
     background: black;
     padding: 0.7rem 1.7rem;
@@ -11,8 +14,8 @@
       color: white;
     }
   }
-  
-  .header-line-container {
+
+  &__line {
     flex: 2;
     margin: 0 2rem;
     position: relative;
@@ -27,47 +30,59 @@
     }
   }
 
-  .header-links-container {
+  &__links {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  .header-links {
+  &__links-inner {
     font-size: 24px;
 
-    a {
-      margin: 0 0.7rem;
-      position: relative;
+  }
 
-      &::after {
-        content: '';
-        position: absolute;
-        width: 0%;
-        height: 1px;
-        background: $red-border;
-        bottom: -2px;
-        left: 0;
-        transition: width 0.5s;
-      }
+  &__link {
+    margin: 0 0.7rem;
+    position: relative;
 
-      &:hover::after {
-        width: 100%;
-      }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 1px;
+      background: $red-border;
+      bottom: -2px;
+      left: 0;
+      transition: width 0.5s;
     }
 
+    &:hover::after {
+      width: 100%;
+    }
   }
-}
 
-.category-links-container {
-  background: #e1e0e0;
-  padding: 1rem;
-  font-size: 1.5rem;
+  &__cats {
+    background: #e1e0e0;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    margin: 0 2rem;
+  }
 
-  &-inner {
+  &__cats-inner {
     margin: 0 auto;
-    width: 70%;
+    width: 80%;
     display: flex;
     justify-content: space-around;
+  }
+
+  &__cat {
+    height: 100%;
+    display: block;
+    padding: 1rem;
+    border-radius: 5px;
+
+    &:hover {
+      background: darken(#e1e0e0, 10%);
+    }
   }
 }

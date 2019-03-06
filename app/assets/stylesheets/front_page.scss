@@ -11,14 +11,9 @@ a {
   text-decoration: none;
 }
 
-.advertisement-square-top {
-  background: gray;
-  width: 336px;
-  height: 280px;
-}
 
 .main-body {
-  padding: 2rem 1rem;
+  padding: 2rem;
   display: flex;
 }
 
@@ -26,24 +21,32 @@ a {
   display: flex;
   padding: 1rem 0;
 
-  &__left {
+  &__left-col {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
-  &__img {
+  &__img-link {
     display: block;
     width: 200px;
     overflow: hidden;
-    img {
+
+    .post__img {
       width: 200px;
       transform: scale(1);
     }
   }
 
+  &:hover {
+    .post__img {
+      transform: scale(1.05);
+      transition: 1s;
+    }
+  }
 
-  &__right {
+
+  &__right-col {
     padding-left: 1rem;
   }
 
@@ -55,7 +58,7 @@ a {
   }
 
 
-  .post-body {
+  &__body {
     display: block;
     margin-top: 1rem;
     margin-bottom: 0.2rem;
@@ -75,46 +78,45 @@ a {
     }
   }
 
-  .post-header {
+  &__header {
     font-weight: 300;
     margin: 0;
     padding: 0;
   }
 
-  .post-data {
+  &__data {
     padding-top: 0.5rem;
     font-family: "PT Sans";
     color: $post-additional-info-fg;
+  }
 
-    .post-data-item {
+  &__data {
 
-      a {
-        padding: 0 0.1rem;
-
-        &:hover {
-          color: $post-additional-info-link-hover;
-          border-bottom: 1px solid $post-additional-info-fg;
-        }
+    a {
+      padding: 0 0.1rem;
+      
+      &:hover {
+        color: $post-additional-info-link-hover;
+        border-bottom: 1px solid $post-additional-info-fg;
       }
-
     }
 
-    .post-data-item:first-child {
-      padding-right: 0.5rem;
-    }
+  }
 
-    .post-data-item:not(:first-child) {
-      padding: 0 0.5rem;
-    }
+  &__data-item:first-child {
+    padding-right: 0.5rem;
+  }
 
-    .post-data-item:not(:last-child) {
-      border-right: 1px solid $gray-border;
-    }
+  &__data-item:not(:first-child) {
+    padding: 0 0.5rem;
+  }
 
-    .post-data-item-author:hover {
-      border-bottom: 1px solid $gray-border;
+  &__data-item:not(:last-child) {
+    border-right: 1px solid $gray-border;
+  }
 
-    }
+  &__data-item-author:hover {
+    border-bottom: 1px solid $gray-border;
   }
 
   &:nth-child(even) {
@@ -132,14 +134,8 @@ a {
   }
 }
 
-.post:hover {
-  .post-image {
-    transform: scale(1.05);
-    transition: 1s;
-  }
-}
+.widgets-col {
+  padding: 0 1rem;
 
-.col-widgets {
-  padding: 1rem;
 }
 

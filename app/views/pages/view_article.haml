@@ -1,62 +1,38 @@
 = render 'shared/header'
 
-%article 
+%article.article
   .article-banner
-    .article-banner-information
-      %h1.article-banner-header How I've became a Web Developer
-      .article-banner-article-data
-        .article-banner-star-rating
+    .article-banner__info
+      %h1.article-banner__header How I've became a Web Developer
+      .article-banner__data
+        .article-banner__star-rating
           5 stars
-        .article-banner-reading-time
+        .article-banner__reading-time
           5 min read
-        .article-banner-author
+        .article-banner__author
           Jane Doe
-    .article-banner-image-container
-      = image_tag asset_path("article_banner.png"), class: 'article-banner-image'
+    .article-banner__image-cont
+      = image_tag asset_path("article_banner.png"), class: 'article-banner__image'
   
-  .view-article-main-container
-    .view-article-widget-container
+  .article-main-cont
+    .article-wgt-col
+      = render 'shared/widgets/recent_posts_by_author_wgt'
 
-      .recent-posts-by-author-widget.view-article-recent-posts-by-author-widget
-        .recent-posts-by-author-widget-header-container
-          %h1.recent-posts-by-author-widget-header Recent Posts by Author
-          .recent-posts-by-author-widget-name
-            Matthew Nielsen
+      = render 'shared/widgets/premium_ad_wgt'
 
-        - 3.times do
-          = render 'shared/widget_post'
+      = render 'shared/widgets/pop_now_wgt'
 
-      .premium-advertisement
-        = image_tag asset_path("premium_banner.png"), class: "premium-advertisement-image"
-      .popular-now-widget.view-article-popular-now-widget
-        %h1.popular-now-widget__main-header Popular Now
+      = render 'shared/widgets/top_rated_wgt'
 
-        - 3.times do
-          = render 'shared/widget_post'
-
-        .popular-now-down-button-container
-          %a.popular-now-down-button.down-arrow-button{ :href => "#" }
-            = image_tag asset_path("down_arrow.svg")
-
-      .top-rated-widget.view-article-top-rated-widget
-        %h1.top-rated-widget__main-header
-          Top Rated
-
-        - 3.times do
-          = render 'shared/widget_post'
-
-        .top-rated-down-button-container
-          %a.top-rated-down-button.down-arrow-button{ :href => "#" }
-            = image_tag asset_path("down_arrow.svg")
-
-    .view-article-main-body-container
-      .view-article-text-container 
+    .article-body-col
+      .article-body-text
         Dolor illo dolores facilis ut soluta facere! Quasi quae quod repudiandae officiis autem Maxime eos deleniti ex obcaecati deserunt. Dignissimos sit voluptatum iure rerum fuga. Sed ea nostrum sapiente id veritatis sapiente Temporibus officia consequuntur molestias fugiat unde excepturi. Corporis recusandae assumenda rerum cumque iusto. Similique fugit similique repellat quasi odio rem rem! Dolorum laborum ratione nesciunt cum sed Aliquam deleniti illo eius aut inventore. Consequuntur sequi delectus nobis repudiandaeAdipisicing totam labore debitis nesciunt voluptates id amet? Recusandae quidem voluptatibus eaque nesciunt quibusdam similique Ducimus est aspernatur odit assumenda facilis Autem ut veritatis officiis maiores possimus! Ut laborum possimus officiis omnis nostrum! Quasi ea porro sit in praesentium Vel aliquid quas quisquam voluptatibus expedita fugit! Beatae maxime repellat labore qui nisi Laboriosam est iste voluptatum repellendus iste? Cupiditate aperiam aperiam eaque repellat culpa, amet. Delectus provident doloremque autem blanditiis iste! Expedita minima labore libero excepturi laboriosam Ipsam repellendus culpa reiciendis quae dicta tempora Doloribus qui error dicta natus odit Inventore ad amet error quia officiis nam Inventore quibusdam laborum reprehenderit repudiandae atque Non quos ut ab explicabo accusantium qui accusamus tempore? Molestias natus deserunt eum animi eligendi? Voluptates a autem similique totam reprehenderit vero aliquam Neque blanditiis ipsam delectus beatae aut similique Debitis obcaecati voluptatibus tenetur sed placeat Hic sit exercitationem fugiat soluta voluptatibus. Hic vel reiciendis porro culpa suscipit. Labore omnis nemo eveniet aspernatur laboriosam, asperiores Nostrum quo nobis dignissimos repudiandae natus Temporibus error natus corrupti vitae fugiat Harum ratione nobis reprehenderit impedit quia Minus tempora nemo expedita quo dolorem. Incidunt unde eligendi eligendi sit ex voluptatibus, voluptatum Similique corrupti obcaecati porro nobis minus Ducimus excepturi totam ad magnam nam. Explicabo aspernatur temporibus molestias fugiat aliquam, eligendi Eius aut maiores ipsum nostrum officia Veritatis architecto aliquam quam adipisci dolorem Alias repellendus impedit deserunt rem libero? Quam exercitationem laborum sint blanditiis asperiores Esse impedit repellendus aperiam nisi voluptas. Enim quo animi voluptate numquam architecto Assumenda minima sed dignissimos ullam eos impedit labore officiis, repellendus! Temporibus doloremque dolor ipsam ullam dolor. Commodi incidunt commodi repellat quae quo blanditiis. Numquam velit quo sed numquam sunt Beatae omnis expedita odio laudantium natus. Sapiente expedita eius eum in tempore. Cum ad nostrum ipsum rem ratione? Ullam sit illum inventore minus sunt Debitis iusto
-      .view-article-interactive-container
-        .interactive-btns-container
 
-          %a.donation-btn-link{ :href => "#" }
-            = image_tag asset_path("donation_button.svg"), class: "donation-btn-icon"
+      .article-interactive
+        .interactive-btns
+
+          %label.interactive-btns__donation-btn{ :href => "#", :for => "donation-btn-checkbox" }
+            = image_tag asset_path("donation_button.svg"), class: "interactive-btns__donation-btn-icon"
 
           .star-rating-vote-container
             .star-rating-vote
@@ -64,95 +40,82 @@
 
 
 
-        .donation-panel-container
-          %h1.donation-panel-header Donate
-          .donation-panel-body
-            .donation-panel-amount-subpanel
-              .donation-panel-amount-subpanel-inner
-                %h1.amount-subpanel-header Donation Amount
-                = text_field_tag :qwerty, nil, placeholder: "$", class: "amount-subpanel-amount-field"
-                .amount-subpanel-btns-container
-                  %a.amount-subpanel-btn{ :href => "#" }
-                    %span.amount-subpanel-btn-text $1
-                  %a.amount-subpanel-btn{ :href => "#" }
-                    %span.amount-subpanel-btn-text $3
-                  %a.amount-subpanel-btn{ :href => "#" }
-                    %span.amount-subpanel-btn-text $5
+        %input{ :type => "checkbox", :id => "donation-btn-checkbox" }
+        .donation-panel
+          %h1.donation-panel__header Donate
+          .donation-panel__body
 
-            .donation-panel-submit-col
-              %a.donation-panel-submit-btn{ :href => "#" }
-                = image_tag asset_path("send_icon.svg"), class: "donation-panel-submit-btn-icon"
+            .amount-subpanel
+              .amount-subpanel__inner
+                %h1.amount-subpanel__header Donation Amount
+                = text_field_tag :qwerty, nil, placeholder: "$", class: "amount-subpanel__amount-field", autocomplete: "off"
+                .amount-subpanel__btns
+                  %a.amount-subpanel__btn{ :href => "#" }
+                    %span.amount-subpanel__btn-text $1
+                  %a.amount-subpanel__btn{ :href => "#" }
+                    %span.amount-subpanel__btn-text $3
+                  %a.amount-subpanel__btn{ :href => "#" }
+                    %span.amount-subpanel__btn-text $5
 
-      .view-article-comment-section-container
-        %h1.comments-header Comments
-        .comments-container
-          .comment
-            .comment-left
-              .comment-avatar-img-container
-                = image_tag asset_path("sample_profile_image_1.jpg"), class: "comment-avatar-img"
-            .comment-right
-              .comment-name
-                %span Elon Musk
-              .comment-text 
-                Ipsum unde illo earum optio quos. Veritatis voluptate dignissimos sint illo sequi Libero consequatur perspiciatis accusamus ut dignissimos Eius molestiae nobis optio consequuntur earum. Ea unde blanditiis corporis cum laboriosam
-              .comment-interactive-bar-container
-                .comment-vote-count
-                  %span.positive-vote-count +300
-                %a.comment-upvote{ :href => "#" }
-                  = image_tag asset_path("thumbs_up_icon.svg"), class: "comment-upvote-icon"
-                %a.comment-downvote{ :href => "#" }
-                  = image_tag asset_path("thumbs_down_icon.svg"), class: "comment-downvote-icon"
-                %a.comment-reply{ :href => "#" }
-                  %span Reply
+            .donation-submit
+              %a.donation-submit__btn{ :href => "#" }
+                = image_tag asset_path("send_icon.svg"), class: "donation-submit__btn-icon"
 
-          .comment-tree-container
-            .comment
-              .comment-left
-                .comment-avatar-img-container
+      .article-cmts
+        %h1.cmts-header Comments
+
+        .cmts-cont
+          .cmt-tree
+
+          .cmt-tree
+            .cmt
+              .cmt__left-col
+                .cmt__avatar
                   %a{ :href => "#" }
-                    = image_tag asset_path("sample_profile_image_1.jpg"), class: "comment-avatar-img"
-              .comment-right
-                .comment-name
-                  %a.comment-name-text{ :href => "#" } Elon Musk
-                .comment-text 
+                    = image_tag asset_path("sample_profile_image_1.jpg"), class: "cmt__avatar-img"
+              .cmt__right-col
+                .cmt__name
+                  %a.cmt__name-link{ :href => "#" } Elon Musk
+                .cmt__text 
                   Ipsum unde illo earum optio quos. Veritatis voluptate dignissimos sint illo sequi Libero consequatur perspiciatis accusamus ut dignissimos Eius molestiae nobis optio consequuntur earum. Ea unde blanditiis corporis cum laboriosam
-                .comment-interactive-bar-container
-                  .comment-vote-count
+                .cmt__interactive
+                  .cmt__vote-count
                     %span.positive-vote-count +300
-                  %a.comment-upvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_up_icon.svg"), class: "comment-upvote-icon"
-                  %a.comment-downvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_down_icon.svg"), class: "comment-downvote-icon"
-                  %a.comment-reply{ :href => "#" }
+                  %a.cmt__upvote{ :href => "#" }
+                    = image_tag asset_path("thumbs_up_icon.svg"), class: "cmt-upvote-icon"
+                  %a.cmt__downvote{ :href => "#" }
+                    = image_tag asset_path("thumbs_down_icon.svg"), class: "cmt-downvote-icon"
+                  %a.cmt__reply{ :href => "#" }
                     %span Reply
             .cmt-reply
               = form_tag "#", class: "cmt-reply-form" do
-                = text_field_tag :hello, nil, class: "cmt-reply-field"
+                = text_area_tag :hello, nil, class: "cmt-reply-field"
                 = submit_tag :submit, class: "cmt-reply-submit-btn"
 
-            .comment.comment-reply
-              .comment-left
-                .comment-avatar-img-container
+            .cmt.cmt-reply
+              .cmt__left-col
+                .cmt__avatar
                   %a{ :href => "#" }
-                    = image_tag asset_path("sample_profile_image_1.jpg"), class: "comment-avatar-img"
-              .comment-right
-                .comment-name
-                  %a.comment-name-text{ :href => "#" } Elon Musk
-                .comment-text 
+                    = image_tag asset_path("sample_profile_image_1.jpg"), class: "cmt__avatar-img"
+              .cmt__right-col
+                .cmt__name
+                  %a.cmt__name-link{ :href => "#" } Elon Musk
+                .cmt__text 
                   Ipsum unde illo earum optio quos. Veritatis voluptate dignissimos sint illo sequi Libero consequatur perspiciatis accusamus ut dignissimos Eius molestiae nobis optio consequuntur earum. Ea unde blanditiis corporis cum laboriosam
-                .comment-interactive-bar-container
-                  .comment-vote-count
+                .cmt__interactive
+                  .cmt__vote-count
                     %span.positive-vote-count +300
-                  %a.comment-upvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_up_icon.svg"), class: "comment-upvote-icon"
-                  %a.comment-downvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_down_icon.svg"), class: "comment-downvote-icon"
-                  %a.comment-reply{ :href => "#" }
+                  %a.cmt__upvote{ :href => "#" }
+                    = image_tag asset_path("thumbs_up_icon.svg"), class: "cmt-upvote-icon"
+                  %a.cmt__downvote{ :href => "#" }
+                    = image_tag asset_path("thumbs_down_icon.svg"), class: "cmt-downvote-icon"
+                  %a.cmt__reply{ :href => "#" }
                     %span Reply
 
 
-%footer.article-view-footer
-  .article-view-footer-inner
+
+%footer.article-footer
+  .article-footer__inner
     %a{ :href => "#" } Help
     %a{ :href => "#" } Status
     %a{ :href => "#" } Writers
