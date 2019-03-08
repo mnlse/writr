@@ -1,0 +1,15 @@
+.fp
+
+  .fp__main-body
+    .fp__posts-col
+      - @articles.each do |art|
+        = render 'shared/fp_post', article: art
+
+    .fp__widgets-col
+      = render 'shared/widgets/ad_wgt'
+
+      = render 'shared/widgets/pop_now_wgt'
+
+      = render 'shared/widgets/top_rated_wgt'
+
+      = render 'shared/widgets/footer_wgt'

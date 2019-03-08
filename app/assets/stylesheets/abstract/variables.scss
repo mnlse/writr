@@ -1,4 +1,13 @@
+/* Global Variables */
+$box-border-radius: 5px;
+
+$box-border-radius-big: 10px;
+
+/* Global Variables End */
+
 /* Front Page Variables */
+
+$fp-widgets-col-bg: #f7f7f7;
 
 /* POST STYLING */
 
@@ -16,6 +25,9 @@ $category-hover-fg: #000;
 
 $post-additional-info-fg: #707070;
 $post-additional-info-link-hover: #000;
+
+$post-read-more: #ababab;
+$post-read-more-hover: #3e7bb4;
 
 
 /* POST STYLING END */
@@ -60,3 +72,16 @@ $comment-user-name-text: #3e7bb4;
 /* ARTICLE VIEW END */
 
 
+
+/* new article styling */
+$na-panel-bg: #f3f3f3;
+$na-title-input-bg: #f8f8f8;
+$na-title-input-border: #cbcbcb;
+
+$na-upload-img-btn: #f8f8f8;
+$na-upload-img-btn-border: #cbcbcb;
+$na-upload-img-btn-plus: #58993b;
+
+$na-upload-img-btn-border-active: #000;
+
+/* new article stytling END */

@@ -3,6 +3,8 @@
   width: 100%;
   height: 2000px;
   margin-top: 3rem;
+  border-radius: $box-border-radius;
+  border-bottom-left-radius: 0;
 
   .cmts-header {
     font-weight: 300;

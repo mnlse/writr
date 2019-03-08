@@ -5,26 +5,31 @@
     .header__line
     .header__links
       .header__links-inner
-        %a.header__link{:href => "google.com"} Login
-        %a.header__link{:href => "google.com"} Register
+        - unless user_signed_in?
+          .header__logged-out-links
+            = link_to "Login", new_user_session_path, class: "header__link"
+            = link_to "Register", new_user_registration_path, class: "header__link"
+        - else
+          .header__logged-in-links
+            = link_to new_article_path, class: "header__new-article" do
+              = image_tag asset_path("new_article_icon.svg"), class: "header__new-article-icon"
+              %span.header__new-article-text New Article
+            .header__name
+              .header__name-inner
+                %span= @full_name
+                = image_tag asset_path("down_arrow.svg"), class: "header__name-img"
+
+              .header__dropdown-menu
+                %a.header__dropdown-menu-link{ :href => "#" } Profile
+                %a.header__dropdown-menu-link{ :href => "#" } Settings
+                = link_to "Logout", destroy_user_session_path, method: :delete, class: "header__dropdown-menu-link"
+
 
   .header__cats
     .header__cats-inner
-      %a.header__cat{ :href => "#" }
-        Home  
-      %a.header__cat{ :href => "#" }
-        Doubt 
-      %a.header__cat{ :href => "#" }
-        Culture 
-      %a.header__cat{ :href => "#" }
-        Tech
-      %a.header__cat{ :href => "#" }
-        Startups 
-      %a.header__cat{ :href => "#" }
-        Self    
-      %a.header__cat{ :href => "#" }
-        Politcs   
-      %a.header__cat{ :href => "#" }
-        Design    
-      %a.header__cat{ :href => "#" }
-        Health
+      = link_to "Home", root_path, class: "header__cat"
+      - @categories.each do |category|
+        = link_to category.name, browse_by_cat_path(category.name), class: "header__cat"
+        -#
+          %a.header__cat{ :href => browse_by_cat_path(category.id) }
+            = category.name

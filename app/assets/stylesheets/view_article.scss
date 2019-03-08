@@ -1,11 +1,12 @@
 .article {
 
   .article-banner {
-    width: 100%;
     position: relative;
     display: flex;
     flex-direction: column;
     box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.15);
+    margin: 2rem;
+    border-radius: 200px;
 
     &__info {
       color: white;
@@ -30,6 +31,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      word-break: break-all;
     }
 
     &__data {
@@ -44,6 +46,8 @@
 
     &__image-cont {
       position: relative;
+      border-radius: $box-border-radius;
+      overflow: hidden;
 
       &::after {
         content: '';
@@ -69,6 +73,9 @@
 .article {
   &-main-cont {
     display: flex;
+    margin: 2rem;
+    border-radius: $box-border-radius;
+    overflow: hidden;
   }
   &-wgt-col {
     flex: 22;
@@ -84,6 +91,7 @@
     font-size: 1.15rem;
     line-height: 180%;
     text-align: justify;
+    word-break: break-all;
   }
 }
 
@@ -200,7 +208,7 @@
       &__btn {
         background: #000;
         padding: 1rem 2.4rem;
-        border-radius: 5px;
+        border-radius: $box-border-radius;
         color: #fff;
         font-size: 2rem;
 
@@ -223,7 +231,7 @@
       padding: 2rem;
       background: #000;
       display: inline-block;
-      border-radius: 5px;
+      border-radius: $box-border-radius;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
@@ -245,6 +253,8 @@
 /* WIDGETS */
 
 .article-wgt-col {
+  background: #e1e1e1;
+
   .widget-post-category,
   .widget-post-data,
   .widget-post-title {

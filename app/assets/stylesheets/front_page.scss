@@ -1,141 +1,16 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: "Noto Serif", serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-
-.main-body {
+.fp__main-body {
   padding: 2rem;
   display: flex;
 }
 
-.post {
-  display: flex;
-  padding: 1rem 0;
-
-  &__left-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  &__img-link {
-    display: block;
-    width: 200px;
-    overflow: hidden;
-
-    .post__img {
-      width: 200px;
-      transform: scale(1);
-    }
-  }
-
-  &:hover {
-    .post__img {
-      transform: scale(1.05);
-      transition: 1s;
-    }
-  }
-
-
-  &__right-col {
-    padding-left: 1rem;
-  }
-
-  &__catgr {
-    color: $category-fg;
-    font-family: "PT Sans";
-    font-size: 1.2rem;
-    position: relative;
-  }
-
-
-  &__body {
-    display: block;
-    margin-top: 1rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .post-cat:hover {
-    color: $category-hover-fg;
-
-    &::after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 1px;
-      background: black;
-      bottom: 1px;
-    }
-  }
-
-  &__header {
-    font-weight: 300;
-    margin: 0;
-    padding: 0;
-  }
-
-  &__data {
-    padding-top: 0.5rem;
-    font-family: "PT Sans";
-    color: $post-additional-info-fg;
-  }
-
-  &__data {
-
-    a {
-      padding: 0 0.1rem;
-      
-      &:hover {
-        color: $post-additional-info-link-hover;
-        border-bottom: 1px solid $post-additional-info-fg;
-      }
-    }
-
-  }
-
-  &__data-item:first-child {
-    padding-right: 0.5rem;
-  }
-
-  &__data-item:not(:first-child) {
-    padding: 0 0.5rem;
-  }
-
-  &__data-item:not(:last-child) {
-    border-right: 1px solid $gray-border;
-  }
-
-  &__data-item-author:hover {
-    border-bottom: 1px solid $gray-border;
-  }
-
-  &:nth-child(even) {
-    border-left: 10px solid $black-border;
-    &:hover {
-      background-color: $post-even-hover-color;
-    }
-  }
-
-  &:nth-child(odd) {
-    border-left: 10px solid $red-border;
-    &:hover {
-      background-color: $post-odd-hover-color;
-    }
-  }
+.fp__posts-col {
+  padding-right: 2rem;
 }
 
-.widgets-col {
-  padding: 0 1rem;
 
+.fp__widgets-col {
+  padding: 0 1rem;
+  border-radius: $box-border-radius;
+  background: $fp-widgets-col-bg;
 }
 

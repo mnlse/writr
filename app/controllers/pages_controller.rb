@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   def index
-  end
-
-  def view_article
+    @articles = Article.visible.order(created_at: :desc)
+    puts @article
   end
 end

@@ -1,9 +1,10 @@
 .ad-wgt {
-  background: gray;
   width: 336px;
   height: 280px;
   position: relative;
   overflow: hidden;
+  border-radius: 5px;
+  margin: 1rem 0;
 
   &__link {
     width: 100%;
@@ -17,6 +18,7 @@
 
 .pop-now-wgt {
   font-size: 120%;
+  overflow: hidden;
 
   &__main-header {
     font-size: 2rem;
@@ -147,6 +149,7 @@
 
 .footer-widget {
   color: $footer-links-color;
+  padding: 1rem;
 
   .widget-footer-links {
     display: flex;

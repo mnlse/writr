@@ -3,7 +3,7 @@
 %article.article
   .article-banner
     .article-banner__info
-      %h1.article-banner__header How I've became a Web Developer
+      %h1.article-banner__header= @article.title
       .article-banner__data
         .article-banner__star-rating
           5 stars
@@ -26,7 +26,7 @@
 
     .article-body-col
       .article-body-text
-        Dolor illo dolores facilis ut soluta facere! Quasi quae quod repudiandae officiis autem Maxime eos deleniti ex obcaecati deserunt. Dignissimos sit voluptatum iure rerum fuga. Sed ea nostrum sapiente id veritatis sapiente Temporibus officia consequuntur molestias fugiat unde excepturi. Corporis recusandae assumenda rerum cumque iusto. Similique fugit similique repellat quasi odio rem rem! Dolorum laborum ratione nesciunt cum sed Aliquam deleniti illo eius aut inventore. Consequuntur sequi delectus nobis repudiandaeAdipisicing totam labore debitis nesciunt voluptates id amet? Recusandae quidem voluptatibus eaque nesciunt quibusdam similique Ducimus est aspernatur odit assumenda facilis Autem ut veritatis officiis maiores possimus! Ut laborum possimus officiis omnis nostrum! Quasi ea porro sit in praesentium Vel aliquid quas quisquam voluptatibus expedita fugit! Beatae maxime repellat labore qui nisi Laboriosam est iste voluptatum repellendus iste? Cupiditate aperiam aperiam eaque repellat culpa, amet. Delectus provident doloremque autem blanditiis iste! Expedita minima labore libero excepturi laboriosam Ipsam repellendus culpa reiciendis quae dicta tempora Doloribus qui error dicta natus odit Inventore ad amet error quia officiis nam Inventore quibusdam laborum reprehenderit repudiandae atque Non quos ut ab explicabo accusantium qui accusamus tempore? Molestias natus deserunt eum animi eligendi? Voluptates a autem similique totam reprehenderit vero aliquam Neque blanditiis ipsam delectus beatae aut similique Debitis obcaecati voluptatibus tenetur sed placeat Hic sit exercitationem fugiat soluta voluptatibus. Hic vel reiciendis porro culpa suscipit. Labore omnis nemo eveniet aspernatur laboriosam, asperiores Nostrum quo nobis dignissimos repudiandae natus Temporibus error natus corrupti vitae fugiat Harum ratione nobis reprehenderit impedit quia Minus tempora nemo expedita quo dolorem. Incidunt unde eligendi eligendi sit ex voluptatibus, voluptatum Similique corrupti obcaecati porro nobis minus Ducimus excepturi totam ad magnam nam. Explicabo aspernatur temporibus molestias fugiat aliquam, eligendi Eius aut maiores ipsum nostrum officia Veritatis architecto aliquam quam adipisci dolorem Alias repellendus impedit deserunt rem libero? Quam exercitationem laborum sint blanditiis asperiores Esse impedit repellendus aperiam nisi voluptas. Enim quo animi voluptate numquam architecto Assumenda minima sed dignissimos ullam eos impedit labore officiis, repellendus! Temporibus doloremque dolor ipsam ullam dolor. Commodi incidunt commodi repellat quae quo blanditiis. Numquam velit quo sed numquam sunt Beatae omnis expedita odio laudantium natus. Sapiente expedita eius eum in tempore. Cum ad nostrum ipsum rem ratione? Ullam sit illum inventore minus sunt Debitis iusto
+        = @article.body.html_safe
 
       .article-interactive
         .interactive-btns
@@ -114,13 +114,4 @@
 
 
 
-%footer.article-footer
-  .article-footer__inner
-    %a{ :href => "#" } Help
-    %a{ :href => "#" } Status
-    %a{ :href => "#" } Writers
-    %a{ :href => "#" } Blog
-    %a{ :href => "#" } Careers
-    %a{ :href => "#" } Privacy
-    %a{ :href => "#" } Terms
-    %a{ :href => "#" } About
+= render 'shared/footer'
