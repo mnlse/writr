@@ -1,0 +1,16 @@
+<script>
+  <% if flash[:notice] %>
+    toastr.success("<%= notice %>");
+  <% end %>
+
+  <%- if flash[:alert] %>
+    toastr.warning("<%= alert %>");
+  <% end %>
+
+  <%- if flash[:arr_error] %>
+    <% flash[:arr_error].each do |x| %>
+      toastr.error("<%= x %>");
+    <% end %>
+  <% end %>
+</script>
+

@@ -1,0 +1,22 @@
+.browse-by-cat {
+
+}
+
+.bbc__main-body {
+  display: flex;
+  margin: 2rem;
+}
+
+.bbc__posts-col {
+  flex: 80;
+
+  .post {
+  }
+}
+
+.bbc__widgets-col {
+  flex: 20;
+  margin-right: 0rem;
+  margin-left: 2rem;
+  padding: 0 1rem;
+}

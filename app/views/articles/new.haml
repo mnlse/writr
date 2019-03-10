@@ -1,21 +1,20 @@
-= render 'shared/header'
-
 .new-article-cont
   = form_for @article do |f|
     .na-title
       = f.text_field :title, class: "na-title-input", placeholder: "title"
 
+    = f.collection_select :category_id, Category.all, :id, :name
     .na-upload-imgs
       .na-upload-img
         %label.na-upload-img__btn{ :for => "thumbnail-picker" }
           %span.na-upload-img__plus +
-          %span.na-upload-img__text Small thumbnail
-        // = file_field_tag :thumbnail, id: "thumbnail-picker"
+          %span.na-upload-img__text Image
+        = f.file_field :image, id: "thumbnail-picker"
       .na-upload-img
         %label.na-upload-img__btn{ :for => "background-img-picker" }
           %span.na-upload-img__plus +
           %span.na-upload-img__text Big background
-        // = file_field_tag 'bg-img', id: "background-img-picker"
+        = file_field_tag 'bg-img', id: "background-img-picker"
 
     .na-text-editor
       = f.text_area :body, :class => "tinymce"

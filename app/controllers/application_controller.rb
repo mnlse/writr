@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :define_full_name, if: :user_signed_in?
   before_action :define_categories
+  protect_from_forgery with: :null_session
 
   protected
   def define_categories

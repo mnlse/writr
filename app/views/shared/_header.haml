@@ -29,7 +29,7 @@
     .header__cats-inner
       = link_to "Home", root_path, class: "header__cat"
       - @categories.each do |category|
-        = link_to category.name, browse_by_cat_path(category.name), class: "header__cat"
+        = link_to category.name, browse_by_cat_path(category.slug_name), class: "header__cat"
         -#
           %a.header__cat{ :href => browse_by_cat_path(category.id) }
             = category.name

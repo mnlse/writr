@@ -1,18 +1,17 @@
-= render 'shared/header'
-
 %article.article
   .article-banner
     .article-banner__info
       %h1.article-banner__header= @article.title
       .article-banner__data
         .article-banner__star-rating
-          5 stars
+          .article-banner__star-rating-inner
+
         .article-banner__reading-time
           5 min read
         .article-banner__author
           Jane Doe
     .article-banner__image-cont
-      = image_tag asset_path("article_banner.png"), class: 'article-banner__image'
+      = image_tag @article.image.url(:background_img), class: 'article-banner__image'
   
   .article-main-cont
     .article-wgt-col
@@ -34,9 +33,8 @@
           %label.interactive-btns__donation-btn{ :href => "#", :for => "donation-btn-checkbox" }
             = image_tag asset_path("donation_button.svg"), class: "interactive-btns__donation-btn-icon"
 
-          .star-rating-vote-container
-            .star-rating-vote
-              1 out of 5
+          .interactive-btns__star-rating-cont
+            .interactive-btns__star-rating
 
 
 
@@ -112,6 +110,41 @@
                   %a.cmt__reply{ :href => "#" }
                     %span Reply
 
+
+:javascript
+  var interactiveBtnsRating = 3;
+
+  $.ajax({
+    url: '#{api_v1_article_interactive_rating_path(@article)}',
+    method: 'GET',
+    dataType: "json",
+    success: function(data) {
+
+      $('.interactive-btns__star-rating').rate({
+        initial_value: data.rating,
+        ajax_method: 'POST',
+        url: '#{api_v1_article_rate_path(@article)}',
+        additional_data: {
+          "article_id": #{@article.id}
+        }
+      });
+
+    }
+  });
+
+  $.ajax({
+    url: '#{api_v1_article_avg_rating_path(@article)}',
+    method: 'GET',
+    success: function(data) {
+
+      $('.article-banner__star-rating-inner').rate({
+        initial_value: data.rating,
+        readonly: true
+      });
+
+    }
+
+  })
 
 
 = render 'shared/footer'

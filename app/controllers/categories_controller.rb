@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
 
   def browse_by_cat
-    @category = Category.find_by(name: params[:category_name])
+    @category = Category.find_by(name: params[:category_slug])
     # @articles = Article.where(category: @category)
     @articles = Article.all
   end

@@ -1,0 +1,16 @@
+.fp__main-body {
+  padding: 2rem;
+  display: flex;
+}
+
+.fp__posts-col {
+  padding-right: 2rem;
+}
+
+
+.fp__widgets-col {
+  padding: 0 1rem;
+  border-radius: $box-border-radius;
+  background: $fp-widgets-col-bg;
+}
+

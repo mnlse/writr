@@ -1,34 +1,34 @@
--#
-  .post
-    .post__left-col
-      %a.post__img-link{ :href => pages_view_article_path }
-        = image_tag asset_path("post_sample_image.png"), class: "post__img"
-    .post__right-col
-      %a.post__catgr{ :href => "#" } Books
-      %h1.post__header
-        = link_to "Go to view page", pages_view_article_path
-      .post__data
-        %span.post__data-item Adipisicing sds
-        %span.post__data-item 5 min read
-        %span.post__data-item
-          %a{ :href => "#" } John Doe
-      %a.post__body{ :href => pages_view_article_path }
-        Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus.
-        %span.post__read-more Read More
-
 .post
   .post__left-col
-    %a.post__img-link{ :href => article }
-      = image_tag asset_path("post_sample_image.png"), class: "post__img"
+    = link_to article, class: "post__img-link" do
+      = image_tag article.image.url(:thumbnail), class: "post__img"
   .post__right-col
-    %a.post__catgr{ :href => "#" } Books
+    = link_to article.category_name, browse_by_cat_path(article.category_slug_name), class: "post__catgr"
     %h1.post__header
       = link_to title_for_fp(article.title), article
     .post__data
-      %span.post__data-item Star rating
-      %span.post__data-item= pluralize(article.reading_time_in_mins, "minute")
-      %span.post__data-item
+      .post__data-item 
+        %div{ id: "rating-" + "#{article.id}" }
+      .post__data-item= pluralize(article.reading_time_in_mins, "minute")
+      .post__data-item
         %a{ :href => "#" }= article.user.first_name + " " + article.user.last_name
-    %a.post__body{ :href => article }
-      Dolor repudiandae sed quam eaque natus. Voluptatibus possimus eum blanditiis iste fugit Aspernatur perspiciatis ipsam autem quae modi Necessitatibus.
+    = link_to article, class: "post__body" do
+      %p.post__body-text= truncate(strip_tags(article.body), length: 150)
       %span.post__read-more Read More
+
+:javascript
+  $.ajax({
+    url: '#{api_v1_article_avg_rating_path(article)}',
+    success: function(data) {
+
+      var options = {
+      
+        step_size: 0.1,
+        readonly: true,
+        initial_value: data.rating
+      };
+
+      $("#rating-" + "#{article.id}").rate(options)
+
+    }
+  })

@@ -8,10 +8,12 @@
 @import 'shared/footer';
 @import 'shared/post';
 
-@import 'front_page';
-@import 'view_article';
-@import 'view_article_comment_section';
-@import 'new_article';
+@import 'index';
+@import 'articles/view_article';
+@import 'articles/view_article_comment_section';
+@import 'articles/new_article';
+
+@import 'categories/browse_by_cat';
 
 * {
   box-sizing: border-box;

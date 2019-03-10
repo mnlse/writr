@@ -5,16 +5,19 @@
     %title Writr
     = csrf_meta_tags
     = csp_meta_tag
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
     %link{:href => "https://fonts.googleapis.com/css?family=Noto+Serif", :rel => "stylesheet"}/
     %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.7.2/css/all.css", :integrity => "sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr", :rel => "stylesheet"}/
     %link{:href => "https://fonts.googleapis.com/css?family=Open+Sans", :rel => "stylesheet"}/
     %link{:href => "https://fonts.googleapis.com/css?family=PT+Sans", :rel => "stylesheet"}/
+
+    -# ToastrJS for notifications
+    %link{ :href => "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css", :rel => "stylesheet" }
+
   %body
-    - if notice
-      = notice.html_safe
-    - if alert
-      = alert.html_safe
+    %script{ :src => "https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js" }
+    = render 'shared/notifications'
+
     = render 'shared/header'
     = yield
