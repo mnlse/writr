@@ -17,13 +17,38 @@
 }
 
 .pop-now-wgt {
-  font-size: 120%;
   overflow: hidden;
+
+  &__animated-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #000;
+  }
+
+  &__time-btns {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .time-btns-active {
+  }
+
+  
+  &__time-btn {
+    padding-bottom: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  &__header {
+    font-size: inherit;
+    border-bottom: 1px solid $gray-border;
+  }
 
   &__main-header {
     font-size: 2rem;
-    padding-bottom: 0.7rem;
-    border-bottom: 1px solid $gray-border;
   }
 
   &__btn-cont {
@@ -56,7 +81,7 @@
     display: flex;
     justify-content: space-between;
 
-    span {
+    &__item {
       color: $widget-post-additional-info-color;
       width: 100%;
       position: relative;
@@ -70,28 +95,30 @@
       }
     }
 
-    span:nth-child(2) {
-      width: 120%;
+    &__item:nth-child(3) {
+      width: 125%;
+      text-align: center;
     }
 
-    span:first-child {
+    &__item:first-child {
       text-align: left;
     }
 
-    span:not(:last-child)::after {
+    &__item:not(:last-child)::after {
       content: '';
       position: absolute;
       height: 100%;
       width: 1px;
       background: $widget-post-additional-info-color;
       right: -2px;
+      top: 0;
     }
   }
 }
 
 
 .down-arrow-btn {
-  font-size: 3rem;
+  padding-top: 0.2rem;
   display: inline-block;
 
   &-img {
@@ -104,7 +131,43 @@
   &__main-header {
     font-size: 2rem;
     padding-bottom: 0.7rem;
+  }
+
+  &__animated-border {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background: #000;
+  }
+
+  &__header {
     border-bottom: 1px solid $gray-border;
+  }
+
+  &__btn-cont {
+    text-align: center;
+  }
+
+  &__time-btns {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  
+  &__time-btn {
+    padding-bottom: 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  &__header {
+    font-size: inherit;
+    border-bottom: 1px solid $gray-border;
+  }
+
+  &__main-header {
+    font-size: 2rem;
   }
 
   &__btn-cont {

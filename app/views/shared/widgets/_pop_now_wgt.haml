@@ -1,8 +1,19 @@
 .pop-now-wgt
-  %h1.pop-now-wgt__main-header Popular Now
+  .pop-now-wgt__header 
+    %h1.pop-now-wgt__main-header Popular Now
+    .pop-now-wgt__time-btns
+      .pop-now-wgt__animated-border
+      %a.pop-now-wgt__time-btn.pop-now-wgt__this-month_btn.time-btns-active{ :href => "#", 'data-scope': :month }
+        This month
+      %a.pop-now-wgt__time-btn.pop-now-wgt__this-day-btn{ :href => "#", 'data-scope': :day }
+        This day
+      %a.pop-now-wgt__time-btn.pop-now-wgt__this-week_btn{ :href => "#", 'data-scope': :week }
+        This week
+      %a.pop-now-wgt__time-btn.pop-now-wgt__this-year_btn{ :href => "#", 'data-scope': :year }
+        This year
 
-  - 3.times do
-    = render 'shared/widgets/widget_post'
+  .pop-now-wgt__body
+    = render partial: 'shared/widgets/widget_article', collection: @articles_pop_now, as: :article
   
   .pop-now-wgt__btn-cont
     %a.down-arrow-btn.pop-now-wgt__load-more-btn{ :href => "#" }

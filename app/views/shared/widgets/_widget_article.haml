@@ -1,0 +1,24 @@
+.widget-post{ 'data-id': article.id }
+  %a.widget-post-category{ :href => "#" } Books
+  %h1.widget-post-title 
+    = link_to truncate(article.title, length: 40), article
+  .widget-post-data
+    .star-rating.widget-post-data__item
+      .star-rating-inner
+    .reading-time.widget-post-data__item
+      = pluralize(article.reading_time_in_mins, "min")
+    .author.widget-post-data__item 
+      %a{ :href => "#" } 
+        = article.user.first_name + " " + article.user.last_name
+    .views-count.widget-post-data__item
+      %i.far.fa-eye
+      = article.impressionist_count
+
+  :javascript
+    var options = {
+      max_value: 5,
+      readonly: true,
+      initial_value: #{article.avg_rating}
+    }
+
+    $('.star-rating-inner').rate(options);

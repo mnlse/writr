@@ -1,9 +1,21 @@
 .top-rated-wgt
-  %h1.top-rated-wgt__main-header
-    Top Rated
+  .top-rated-wgt__header
+    %h1.top-rated-wgt__main-header
+      Top Rated
 
-  - 3.times do
-    = render 'shared/widgets/widget_post'
+    .top-rated-wgt__time-btns
+      .top-rated-wgt__animated-border
+      %a.top-rated-wgt__time-btn.top-rated-wgt__this-month_btn.time-btns-active{ :href => "#", 'data-scope': :month }
+        This month
+      %a.top-rated-wgt__time-btn.top-rated-wgt__this-day-btn{ :href => "#", 'data-scope': :day }
+        This day
+      %a.top-rated-wgt__time-btn.top-rated-wgt__this-week_btn{ :href => "#", 'data-scope': :week }
+        This week
+      %a.top-rated-wgt__time-btn.top-rated-wgt__this-year_btn{ :href => "#", 'data-scope': :year }
+        This year
+
+  .top-rated-wgt__body
+    = render partial: 'shared/widgets/widget_article', collection: @articles_top_rated, as: :article
 
   .top-rated-wgt__btn-cont
     %a.top-rated-wgt__down-btn.down-arrow-btn{ :href => "#" }

@@ -13,11 +13,13 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.1'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'paperclip'
-
-gem 'tinymce-rails', '~> 4.3', '>= 4.3.13'
 
 gem 'devise', '~> 4.2'
+gem 'paperclip'
+gem 'impressionist', '~> 1.5', '>= 1.5.1'
+
+gem 'tinymce-rails', '~> 4.3', '>= 4.3.13'
+gem 'jquery-ui-rails', '~> 5.0', '>= 5.0.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

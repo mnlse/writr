@@ -59,56 +59,7 @@
               %a.donation-submit__btn{ :href => "#" }
                 = image_tag asset_path("send_icon.svg"), class: "donation-submit__btn-icon"
 
-      .article-cmts
-        %h1.cmts-header Comments
-
-        .cmts-cont
-          .cmt-tree
-
-          .cmt-tree
-            .cmt
-              .cmt__left-col
-                .cmt__avatar
-                  %a{ :href => "#" }
-                    = image_tag asset_path("sample_profile_image_1.jpg"), class: "cmt__avatar-img"
-              .cmt__right-col
-                .cmt__name
-                  %a.cmt__name-link{ :href => "#" } Elon Musk
-                .cmt__text 
-                  Ipsum unde illo earum optio quos. Veritatis voluptate dignissimos sint illo sequi Libero consequatur perspiciatis accusamus ut dignissimos Eius molestiae nobis optio consequuntur earum. Ea unde blanditiis corporis cum laboriosam
-                .cmt__interactive
-                  .cmt__vote-count
-                    %span.positive-vote-count +300
-                  %a.cmt__upvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_up_icon.svg"), class: "cmt-upvote-icon"
-                  %a.cmt__downvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_down_icon.svg"), class: "cmt-downvote-icon"
-                  %a.cmt__reply{ :href => "#" }
-                    %span Reply
-            .cmt-reply
-              = form_tag "#", class: "cmt-reply-form" do
-                = text_area_tag :hello, nil, class: "cmt-reply-field"
-                = submit_tag :submit, class: "cmt-reply-submit-btn"
-
-            .cmt.cmt-reply
-              .cmt__left-col
-                .cmt__avatar
-                  %a{ :href => "#" }
-                    = image_tag asset_path("sample_profile_image_1.jpg"), class: "cmt__avatar-img"
-              .cmt__right-col
-                .cmt__name
-                  %a.cmt__name-link{ :href => "#" } Elon Musk
-                .cmt__text 
-                  Ipsum unde illo earum optio quos. Veritatis voluptate dignissimos sint illo sequi Libero consequatur perspiciatis accusamus ut dignissimos Eius molestiae nobis optio consequuntur earum. Ea unde blanditiis corporis cum laboriosam
-                .cmt__interactive
-                  .cmt__vote-count
-                    %span.positive-vote-count +300
-                  %a.cmt__upvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_up_icon.svg"), class: "cmt-upvote-icon"
-                  %a.cmt__downvote{ :href => "#" }
-                    = image_tag asset_path("thumbs_down_icon.svg"), class: "cmt-downvote-icon"
-                  %a.cmt__reply{ :href => "#" }
-                    %span Reply
+      = render partial: 'comment_secion'
 
 
 :javascript

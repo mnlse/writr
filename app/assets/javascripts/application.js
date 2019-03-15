@@ -13,6 +13,10 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery
+//= require jquery-ui
 //= require tinymce
-//= require vendor/raterjs/rater.min
+//= require vendors/raterjs/rater.min
+//= require vendors/pluralize/pluralize
+//= require vendors/jquery_easing/easing
 //= require_tree .
+//= require_tree ./widgets/

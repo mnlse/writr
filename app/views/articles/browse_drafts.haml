@@ -1,0 +1,20 @@
+.bd
+  .bd-inner
+    .bd-group-action
+      .bd-group-action__checkbox.bd-checkbox
+        %input{ type: :checkbox, id: "ga-checkbox", class: "bd-group-action__checkbox-input bd-checkbox-input", 'data-selected-ids': "" }
+        %label{ for: "ga-checkbox", class: "bd-group-action__checkbox-label bd-checkbox-label" }
+      .bd-group-action__header
+        %span.bd-group-action__header-text Group Action
+      .bd-group-action__btns
+        %a.bd-group-action__delete-btn{ :href => "#" }
+          = image_tag asset_path("icons/delete_article"), class: "bd-group-action__delete-btn-icon"
+          %span.bd-group-action__delete-btn-text Delete
+        %a.bd-group-action__publish-btn{ :href => "#" }
+          = image_tag asset_path("icons/publish_article"), class: "bd-group-action__publish-btn-icon"
+          %span.bd-group-action__publish-btn-text Publish
+    .bd-posts-body
+      = render partial: 'shared/bd_article', collection: @articles, as: :article
+
+      %a.bd-posts-body__load-more-btn{ :href => "#" }
+        Load More

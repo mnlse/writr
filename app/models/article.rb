@@ -1,8 +1,12 @@
 class Article < ApplicationRecord
+  is_impressionable counter_cache: true
+
   has_attached_file :image, styles: { thumbnail: "300x200>", background_img: "1500x800>" }
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
   MIN_IMG_WIDTH = 1000
   MIN_IMG_HEIGHT = 600
+
   validates :title, presence: true, allow_blank: false, length: { minimum: 3, maximum: 100 }
   validates :body, presence: true, allow_blank: false, length: { minimum: 100, maximum: 150000 }
   validate :check_dimensions
@@ -13,8 +17,15 @@ class Article < ApplicationRecord
 
   before_create :set_reading_time
 
-  scope :visible, -> { where(is_draft: false) }
+  default_scope { where(is_draft: false) }
   scope :drafts, -> { where(is_draft: true) }
+  scope :this_day, -> { where(created_at: Date.today.beginning_of_day..Date.today.end_of_day) }
+  scope :this_week, -> { where(created_at: Date.today.beginning_of_week..Date.today.end_of_week) }
+  scope :this_month, -> { where(created_at: Date.today.beginning_of_month..Date.today.end_of_month) }
+  scope :this_year, -> { where(created_at: Date.today.beginning_of_year..Date.today.end_of_year) }
+
+  scope :most_popular, -> { order(impressions_count: :desc) }
+  scope :top_rated, -> { order(avg_rating: :desc) }
 
   delegate :name, :slug_name, to: :category, prefix: true
 

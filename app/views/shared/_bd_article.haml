@@ -1,0 +1,25 @@
+.bd-post{ "data-id": article.id }
+  .bd-post__inner
+    .bd-post__left
+      .bd-post__checkbox.bd-checkbox
+        %input{ type: :checkbox, id: "bd-post-" + article.id.to_s + "-checkbox", class: "bd-post__checkbox-input bd-checkbox-input"  }
+        %label{ for: "bd-post-" + article.id.to_s + "-checkbox", class: "bd-post__checkbox-label bd-checkbox-label" }
+
+    .bd-post__right
+      %a.bd-post__title{ :href => "#" }= article.title
+      .bd-post__action-btns
+        = link_to article, class: "bd-post__preview-btn bd-post__btn" do
+          = image_tag asset_path("icons/preview_article"), class: "bd-post__preview-btn-icon bd-post__btn-icon"
+          %span.bd-post__btn-text Preview
+        = link_to article, method: :delete, data: { confirm: "Are you certain to remove article titled:\n\"#{article.title}\"" }, class: "bd-post__delete-btn bd-post__btn" do
+          = image_tag asset_path("icons/delete_article"), class: "bd-post__delete-btn-icon bd-post__btn-icon"
+          %span.bd-post__btn-text Delete
+        %a.bd-post__edit-btn.bd-post__btn{ :href => edit_article_path(article) }
+          = image_tag asset_path("icons/edit_article"), class: "bd-post__edit-btn-icon bd-post__btn-icon"
+          %span.bd-post__btn-text Edit
+        = link_to publish_api_v1_article_path(article), class: "bd-post__publish-btn bd-post__btn", method: :put do
+          = image_tag asset_path("icons/publish_article"), class: "bd-post__publish-btn-icon bd-post__btn-icon"
+          %span.bd-post__btn-text Publish
+
+      .bd-post__description
+        = truncate(strip_tags(article.body), length: 300)

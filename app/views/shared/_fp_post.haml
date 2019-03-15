@@ -1,4 +1,4 @@
-.post
+.post{ "data-id" => article.id }
   .post__left-col
     = link_to article, class: "post__img-link" do
       = image_tag article.image.url(:thumbnail), class: "post__img"
@@ -12,23 +12,19 @@
       .post__data-item= pluralize(article.reading_time_in_mins, "minute")
       .post__data-item
         %a{ :href => "#" }= article.user.first_name + " " + article.user.last_name
+      .post__data-item
+        %i.far.fa-eye
+        = article.impressionist_count
     = link_to article, class: "post__body" do
       %p.post__body-text= truncate(strip_tags(article.body), length: 150)
       %span.post__read-more Read More
 
-:javascript
-  $.ajax({
-    url: '#{api_v1_article_avg_rating_path(article)}',
-    success: function(data) {
-
+  :javascript
       var options = {
       
         step_size: 0.1,
         readonly: true,
-        initial_value: data.rating
+        initial_value: #{article.avg_rating} 
       };
 
       $("#rating-" + "#{article.id}").rate(options)
-
-    }
-  })

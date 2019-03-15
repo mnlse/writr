@@ -7,9 +7,4 @@ class RegistrationsController < Devise::RegistrationsController
   def create
     super
   end
-
-  private
-  def permitted_params
-    params.require(:user).permit(:first_name, :last_name, :email, :country_id, :password, :password_confirmation)
-  end
 end
