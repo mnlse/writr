@@ -1,4 +1,4 @@
-%article.article
+%article.article{ 'data-id': @article.id }
   .article-banner
     .article-banner__info
       %h1.article-banner__header= @article.title
@@ -15,13 +15,13 @@
   
   .article-main-cont
     .article-wgt-col
-      = render 'shared/widgets/recent_posts_by_author_wgt'
+      = render partial: 'shared/widgets/recent_posts_by_author_wgt'
 
-      = render 'shared/widgets/premium_ad_wgt'
+      = render partial: 'shared/widgets/premium_ad_wgt'
 
-      = render 'shared/widgets/pop_now_wgt'
+      = render partial: 'shared/widgets/pop_now_wgt'
 
-      = render 'shared/widgets/top_rated_wgt'
+      = render partial: 'shared/widgets/top_rated_wgt'
 
     .article-body-col
       .article-body-text
@@ -59,7 +59,7 @@
               %a.donation-submit__btn{ :href => "#" }
                 = image_tag asset_path("send_icon.svg"), class: "donation-submit__btn-icon"
 
-      = render partial: 'comment_secion'
+      = render partial: 'comment_section'
 
 
 :javascript

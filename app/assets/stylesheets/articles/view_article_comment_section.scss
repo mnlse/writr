@@ -12,6 +12,78 @@
     padding-top: 0.5rem;
   }
 
+  .cmts-cont {
+    width: 100%;
+    position: relative;
+  }
+
+  .cmts-body {
+    margin-top: 2rem;
+  }
+
+  .cmt-submit-btn {
+    border: 1px solid darken(#99ae44, 20%);
+    background: #99ae44;
+    padding: 0.6rem 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "PT Sans", sans-serif; 
+    margin-top: 0.4rem;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .cmt-cancel-btn {
+    border: 1px solid darken(#ca4646, 20%);
+    background: #ca4646;
+    padding: 0.6rem 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: "PT Sans", sans-serif; 
+    margin-top: 0.4rem;
+    border-radius: 5px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .cmts-add-cmt-form {
+    display: flex;
+    flex-direction: column;
+
+    &__field {
+      background: rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+      border: 0;
+      outline: 0;
+      margin: 0 2rem;
+      padding: 1rem;
+      width: calc(100% - (2rem * 2));
+      border-bottom: 1px solid #000;
+      overflow: hidden;
+      color: rgba(0,0,0,0.8);
+    }
+
+    &__btns {
+      margin: 0 auto;
+      position: relative;
+      width: calc(100% - (2rem * 2));
+
+      &-inner {
+        position: absolute;
+        right: 0;
+      }
+    }
+
+    &__cancel-btn,
+    &__submit-btn {
+    }
+  }
+
   .cmt {
     display: flex;
     margin: 2rem;
@@ -36,10 +108,21 @@
     &__right-col {
       padding: 0 1rem;
       position: relative; 
+      width: 100%;
     }
 
     .cmt__name {
       color: $comment-user-name-text;
+    }
+
+    &__text {
+      p {
+        margin: 0;
+      }
+    }
+
+    &__replies-cont {
+      display: none;
     }
 
     .cmt__interactive {
@@ -80,16 +163,26 @@
 
   }
 
-  .cmt-reply {
+  .cmt__reply-form-cont {
+    display: none;
+    width: 100%;
 
-    &-form {
-      padding: 0 2.6rem;
+    .cmt__reply-form {
+      margin-top: 1rem;
+      width: 100%;
       display: flex;
       flex-direction: column;
+
+      &-btns {
+        &-inner {
+          float: right;
+        }
+      }
     }
 
-    &-field {
+    .cmt__reply-field {
       background: rgba(0, 0, 0, 0.1);
+      border-bottom: 1px solid #000;
       border: 0;
       padding: 0.3rem;
       border-bottom: 1px solid lighten(#000, 72%);
@@ -100,21 +193,10 @@
       }
     }
 
-    &-submit-btn {
-      align-self: flex-end;
-      border: 1px solid lighten(#000, 30%);
-      background: #000;
-      padding: 0.5rem 1rem;
-      color: #fff;
-      text-transform: uppercase;
-      font-family: "PT Sans", sans-serif; 
-      margin-top: 0.4rem;
+  }
 
-      &:hover {
-        cursor: pointer;
+  .cmt-reply {
 
-      }
-    }
   }
 
   .cmt-reply {

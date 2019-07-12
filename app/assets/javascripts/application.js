@@ -18,5 +18,6 @@
 //= require vendors/raterjs/rater.min
 //= require vendors/pluralize/pluralize
 //= require vendors/jquery_easing/easing
+//= require vendors/card-js/card-js.min.js
 //= require_tree .
 //= require_tree ./widgets/

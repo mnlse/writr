@@ -1,0 +1,35 @@
+.cmt-tree
+  .cmt{ 'data-id': comment.id }
+    .cmt__left-col
+      .cmt__avatar
+        %a{ :href => "#" }
+          = image_tag asset_path("sample_profile_image_1.jpg"), class: "cmt__avatar-img"
+    .cmt__right-col
+      .cmt__name
+        %a.cmt__name-link{ :href => "#" }= comment.user_full_name
+      .cmt__text 
+        %p= comment.body
+      .cmt__interactive
+        .cmt__vote-count
+          %span.positive-vote-count= comment.vote_count
+        %a.cmt__upvote{ :href => "#" }
+          = image_tag asset_path("thumbs_up_icon.svg"), class: "cmt-upvote-icon"
+        %a.cmt__downvote{ :href => "#" }
+          = image_tag asset_path("thumbs_down_icon.svg"), class: "cmt-downvote-icon"
+        %a.cmt__reply{ :href => "#" } Reply
+      - if comment.has_replies
+        .cmt__view-replies
+          %a.cmt__view-replies-btn{ :href => "#" }
+            View Replies
+      .cmt__reply-form-cont
+        = form_tag "#", class: "cmt__reply-form" do
+          = text_area_tag :body, nil, class: "cmt__reply-field", rows: 1
+          .cmt__reply-form-btns
+            .cmt__reply-form-btns-inner
+              %button.cmt-cancel-btn Cancel
+              = submit_tag :submit, class: "cmt__reply-submit-btn cmt-submit-btn"
+      - if comment.replies.count > 0
+        .cmt__view-replies-btn
+          %span View Replies
+  .cmt__replies-cont
+    = render partial: 'comments/comment_reply', collection: comment.replies, as: :reply_comment

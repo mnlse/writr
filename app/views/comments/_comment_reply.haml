@@ -1,0 +1,17 @@
+.cmt.cmt-reply{ 'data-id': reply_comment.id }
+  .cmt__left-col
+    .cmt__avatar
+      %a{ :href => "#" }
+        = image_tag asset_path("sample_profile_image_1.jpg"), class: "cmt__avatar-img"
+  .cmt__right-col
+    .cmt__name
+      %a.cmt__name-link{ :href => "#" } Elon Musk
+    .cmt__text 
+      = reply_comment.body
+    .cmt__interactive
+      .cmt__vote-count
+        %span.positive-vote-count= reply_comment.vote_count
+      %a.cmt__upvote{ :href => "#" }
+        = image_tag asset_path("thumbs_up_icon.svg"), class: "cmt-upvote-icon"
+      %a.cmt__downvote{ :href => "#" }
+        = image_tag asset_path("thumbs_down_icon.svg"), class: "cmt-downvote-icon"

@@ -1,0 +1,10 @@
+%aside.settings-menu
+  %ul.settings-menu__list
+    %li.settings-menu__list-item
+      = link_to "User", pages_settings_user_path, class: "settings-menu__link"
+    %li.settings-menu__list-item
+      = link_to "Profile", "#", class: "settings-menu__link"
+    %li.settings-menu__list-item
+      = link_to "Security", edit_user_password_path, class: "settings-menu__link"
+    %li.settings-menu__list-item
+      = link_to "Credentials", pages_settings_credentials_path, class: "settings-menu__link"

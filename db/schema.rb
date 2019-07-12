@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_091032) do
+ActiveRecord::Schema.define(version: 2019_04_07_174023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,36 @@ ActiveRecord::Schema.define(version: 2019_03_12_091032) do
     t.string "slug_name"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "vote_count", default: 0
+    t.integer "article_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.boolean "is_reply", default: false
+    t.integer "reply_to_id"
+    t.boolean "has_replies", default: false
+    t.index ["article_id"], name: "index_comments_on_article_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "countries", force: :cascade do |t|
     t.string "name", limit: 80
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "credit_cards", force: :cascade do |t|
+    t.string "cvv"
+    t.string "number"
+    t.string "holder_name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "expiry_month", limit: 2
+    t.integer "expiry_year", limit: 2
+    t.index ["user_id"], name: "index_credit_cards_on_user_id"
   end
 
   create_table "impressions", force: :cascade do |t|
@@ -99,8 +125,17 @@ ActiveRecord::Schema.define(version: 2019_03_12_091032) do
     t.string "state"
     t.string "city"
     t.integer "country_id"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.bigint "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.string "profile_background_file_name"
+    t.string "profile_background_content_type"
+    t.bigint "profile_background_file_size"
+    t.datetime "profile_background_updated_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "credit_cards", "users"
 end

@@ -8,7 +8,7 @@
 
 create_user = false
 create_categories = false
-create_articles = true
+create_articles = false
 
 if create_user
   User.create!(first_name: "John", last_name: "Doe", email: "a@a.com", password: "123456")

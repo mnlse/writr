@@ -1,0 +1,14 @@
+.article-cmts
+  %h1.cmts-header Comments
+
+  .cmts-cont
+    = form_tag :comment, class: 'cmts-add-cmt-form' do |f|
+      = text_area_tag :body, nil, class: :'cmts-add-cmt-form__field', rows: 1
+      .cmts-add-cmt-form__btns
+        .cmts-add-cmt-form__btns-inner
+          %button.cmts-add-cmt-form__cancel-btn.cmt-cancel-btn 
+            Cancel
+
+          = submit_tag :submit, class: "cmts-add-cmt-form__submit-btn cmt-submit-btn"
+    .cmts-body
+      = render partial: 'comments/comment', collection: @comments

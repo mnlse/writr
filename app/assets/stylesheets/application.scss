@@ -1,4 +1,4 @@
-@import 'vendor/normalize';
+@import 'vendors/normalize';
 
 @import 'abstract/variables';
 
@@ -15,6 +15,17 @@
 @import 'articles/browse_drafts';
 
 @import 'categories/browse_by_cat';
+@import 'pages/settings';
+
+@import 'profile_pages/show';
+
+@import 'devise/log_in';
+@import 'devise/new_registration';
+@import 'devise/forgot_pwd';
+@import 'devise/shared';
+
+@import 'vendors/card';
+@import 'vendors/card-js.min';
 
 * {
   box-sizing: border-box;

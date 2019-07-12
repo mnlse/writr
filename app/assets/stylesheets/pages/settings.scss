@@ -1,0 +1,217 @@
+.settings-cont {
+  font-family: "Lato", sans-serif;
+  background: #f7f7f7;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  height: 1000px;
+  border: 1px solid #8a8a8a;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+}
+
+.settings-menu {
+  width: 20%;
+  border-right: 1px solid #8a8a8a;
+  border-bottom: 1px solid #8a8a8a;
+  font-size: 1.7rem;
+  font-weight: 300;
+  display: inline-block;
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: #e8e8e8;
+  }
+  &__link {
+    display: block;
+    padding: 2rem;
+    text-align: center;
+
+    &:hover {
+      background: darken(#e8e8e8, 10%);
+    }
+  }
+}
+
+.settings-main-header {
+  border-bottom: 1px solid #8a8a8a;
+  margin: 0;
+  padding: 0.3rem 0;
+  text-align: center;
+  font-weight: 200;
+  font-size: 2.7rem;
+}
+
+.settings-body {
+  display: inline-block;
+  vertical-align: top;
+  width: 79%;
+  padding: 0 2rem;
+}
+
+.settings-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.settings-header {
+  font-size: 2.6rem;
+  font-weight: 300;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    background: #cc5f3a;
+    border: 1px solid #000;
+    width: 12px;
+    height: 12px;
+    transform: translateY(-50%);
+  }
+}
+
+.settings-avatar-img,
+.settings-profile-bg-img {
+  &__file-picker {
+    display: none;
+  }
+  
+  &__img {
+    border: 1px solid #000;
+  }
+
+  &__upload-btn {
+    border: 0;
+    background: #d9d9d9;
+    outline: 0;
+    padding: 0.7rem 1.7rem;
+    border-radius: 5px;
+    display: none;
+    cursor: pointer;
+
+    &:hover {
+      background: darken(#d9d9d9, 10%);
+    }
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+
+    &::after {
+      content: '+';
+      font-size: 2rem;
+      font-weight: 300;
+      display: block;
+      position: absolute;
+      padding: 0.4rem 0.8rem;
+      background: #fff;
+      opacity: 0.5;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 0.9;
+      }
+    }
+  }
+}
+
+.settings-avatar-img {
+  &__img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
+.settings-profile-bg-img {
+  &__img {
+    height: 150px;
+    width: 320px;
+    object-fit: cover;
+  }
+}
+
+.settings-bio {
+
+  &__input {
+    background: #d9d9d9;
+    border: 0;
+    height: 300px;
+    width: 600px;
+    outline: 0;
+    padding: 1rem;
+    float: left;
+  }
+
+  &__save-btn {
+    height: 300px;
+    background: darken(#d9d9d9, 8%);
+    padding: 0 20px;
+    border: 0;
+  }
+}
+
+.settings-password {
+  &__form {
+    &-input-cont {
+      float: left;
+      margin-right: 1rem;
+
+      input {
+        border: 0;
+        outline: 0;
+        background: darken(#d9d9d9, 8%);
+        padding: 0.8rem 1rem; 
+      }
+    }
+
+    &-submit-btn {
+      display: block;
+      clear: both;
+      border: 1px solid darken(#d9d9d9, 15%);
+      background: darken(#d9d9d9, 3%);
+      padding: 0.5rem 1rem;
+    }
+
+    input {
+    }
+  }
+}
+
+.cc-submit-btn {
+  display: block;
+  clear: both;
+  border: 1px solid darken(#d9d9d9, 15%);
+  background: darken(#d9d9d9, 3%);
+  padding: 0.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.settings-cc-disp {
+  display: block;
+  background: #d9d9d9;
+  padding: 1rem 2rem;
+
+  &__img {
+    height: 30px;
+  }
+
+  &__delete {
+    background: rgba(#ff0000, 0.5);
+    padding: 1rem;
+    text-align: center;
+  }
+}

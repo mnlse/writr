@@ -26,8 +26,12 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    art = Article.unscoped.find(params[:id])
+    @article = Article.unscoped.find(params[:id])
+    @comments = Comment.no_replies
 
+    @new_comment = @article.comments.new
+
+=begin
     if art.is_draft == true
       if user_signed_in? && current_user.articles.unscoped.find(art.id)
         @article = art
@@ -37,6 +41,7 @@ class ArticlesController < ApplicationController
     else
       @article = art
     end
+=end
 
     @user_rating = Rating.find_by(user: current_user, article: @article) || 0
 

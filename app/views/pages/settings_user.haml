@@ -1,0 +1,31 @@
+.settings-cont
+  %h1.settings-main-header Settings
+  = render 'shared/settings_menu'
+  .settings-body
+    .settings-row
+      .settings-avatar-img
+        %h1.settings-header Avatar Image
+        = form_for :user, url: user_registration_url, method: :patch do |f|
+          %label.settings-avatar-img__label{ :href => "#", for: "avatar-file-picker" }
+            - if @user.avatar.exists?
+              = image_tag @user.avatar.url(:medium), class: "settings-avatar-img__img"
+            - else
+              = image_tag asset_path("placeholders/add_avatar.png"), class: "settings-avatar-img__img"
+          = f.file_field :avatar, class: "settings-avatar-img__file-picker", id: "avatar-file-picker"
+          = f.submit "Upload", class: "settings-avatar-img__upload-btn"
+      .settings-profile-bg-img
+        %h1.settings-header Profile Background
+        = form_for :user, url: user_registration_url, method: :patch do |f|
+          %label.settings-profile-bg-img__label{ :href => "#", for: "profile-bg-file-picker" }
+            - if @user.profile_background.exists?
+              = image_tag @user.profile_background.url(:medium), class: "settings-profile-bg-img__img"
+            - else
+              = image_tag asset_path("placeholders/add_profile_background.png"), class: "settings-profile-bg-img__img"
+          = f.file_field :profile_background, class: "settings-profile-bg-img__file-picker", id: "profile-bg-file-picker"
+          = f.submit "Upload", class: "settings-profile-bg-img__upload-btn"
+    .settings-row
+      .settings-bio
+        %h1.settings-header Bio
+        = form_for :user, url: user_registration_url, method: :patch do |f|
+          = f.text_area :bio, class: "settings-bio__input"
+          = f.submit "Save", class: "settings-bio__save-btn"

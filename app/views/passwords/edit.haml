@@ -1,0 +1,31 @@
+.settings-cont
+  %h1.settings-main-header Settings
+  = render 'shared/settings_menu'
+  .settings-body
+    .settings-row
+      %div.settings-password 
+        %h1.settings-header
+          Change password
+        = form_for @user, url: user_password_url, html: { class: 'settings-password__form' } do |f|
+          %div.settings-password__form-input-cont
+            %p 
+              = f.label :password
+            %p 
+              = f.password_field :password
+            
+          
+          %div.settings-password__form-input-cont
+            %p
+              = f.label :new_password
+            %p 
+              = f.password_field :new_password
+              
+          
+          %div.settings-password__form-input-cont
+            %p 
+              = f.label :confirm_new_password, 'New password confirmation'
+            %p 
+              = f.password_field :confirm_new_password
+            
+          
+          = f.submit :Submit, class: "settings-password__form-submit-btn"

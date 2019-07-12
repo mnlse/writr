@@ -20,9 +20,9 @@
                 = image_tag asset_path("down_arrow.svg"), class: "header__name-img"
 
               .header__dropdown-menu
-                %a.header__dropdown-menu-link{ :href => "#" } Profile
+                = link_to "Profile", profile_page_path(current_user), class: "header__dropdown-menu-link"
                 = link_to "My drafts", browse_drafts_articles_path, class: "header__dropdown-menu-link"
-                %a.header__dropdown-menu-link{ :href => "#" } Settings
+                %a.header__dropdown-menu-link{ :href => pages_settings_user_path } Settings
                 = link_to "Logout", destroy_user_session_path, method: :delete, class: "header__dropdown-menu-link"
 
 

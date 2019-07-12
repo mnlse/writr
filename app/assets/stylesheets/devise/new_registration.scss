@@ -1,0 +1,50 @@
+.register {
+  background: #ececec;
+  width: 25%;
+  margin: 0 auto;
+  padding: 1rem;
+  margin-bottom: 3rem;
+
+  &__label {
+    color: #474747;
+    font-size: 18px;
+  }
+
+  &__field {
+    width: 100%;
+    background: #e1e1e1;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 0;
+    outline: 0;
+  }
+
+  &__actions {
+    width: 100%;
+  }
+
+  &__submit-btn {
+    display: block;
+    border: 0;
+    background: #979797;
+    color: #fff;
+    padding: 0.5rem;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  &__country-select {
+    width: 100%;
+    background: #e1e1e1;
+    padding: 0.8rem;
+    margin: 0.5rem 0;
+    border: 0;
+    outline: 0;
+  }
+}
+
+.register-header {
+  font-size: 2rem;
+  text-align: center;
+}

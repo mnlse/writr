@@ -12,6 +12,8 @@ class Article < ApplicationRecord
   validate :check_dimensions
 
   has_many :ratings
+  has_many :comments
+
   belongs_to :user
   belongs_to :category
 
@@ -66,5 +68,4 @@ class Article < ApplicationRecord
       end
     end
   end
-
 end
