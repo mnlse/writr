@@ -28,6 +28,13 @@ class Api::V1::ArticlesController < ApplicationController
     render partial: 'shared/fp_post', collection: articles, as: :article
   end
 
+  def provide_profile_page_articles_as_html
+    start_index = params[:start_index].to_i
+    end_index = params[:end_index].to_i
+    articles = Article.where(id: start_index..end_index).reverse
+    render partial: 'shared/profile_post', collection: articles, as: :article
+  end
+
   def provide_draft_articles_as_html
     last_id = params[:last_id].to_i
     amount_of_articles = params[:amount_of_articles] || 6
@@ -62,7 +69,6 @@ class Api::V1::ArticlesController < ApplicationController
     if ids.is_a?(Array)
 
       ids.each do |id|
-        puts id
         id = id.to_i
         article = Article.unscoped.find(id)
         article.is_draft = false

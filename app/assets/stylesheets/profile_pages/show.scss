@@ -1,4 +1,139 @@
-.profile-bg {
-  width: calc(100% - 4rem);
-  margin: 2rem;
+.profile {
+  &-bg {
+    width: calc(100% - 4rem);
+    margin: 2rem;
+    border-radius: 15px;
+    padding: 5rem 0;
+    background-size: cover;
+  }
+
+  &-row-info {
+    display: flex;
+  }
+
+  &-col-left {
+    display: flex;
+    flex-direction: column;
+    margin-left: 2rem;
+    flex: 1;
+  }
+
+  &-col-right {
+    flex: 5;
+    display: flex;
+    align-items: center;
+  }
+
+  &-name {
+    background: #000;
+    color: #fff;
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    border-radius: 20px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  &-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 20px;
+    margin: 0 auto;
+    margin-top: 1rem;
+  }
+
+  &-bio {
+    width: 50%;
+    background: #000;
+    color: #fff;
+    font-size: 16px;
+    padding: 1.5rem;
+  }
+
+  &-main-container {
+    display: flex;
+  }
+
+  &-friends {
+    background: #EAEAEA;
+    margin-left: 2rem;
+    border-radius: 24px;
+    height: fit-content;
+    padding-bottom: 2rem;
+
+    &-header {
+      text-align: center;
+    }
+  }
+
+  &-load-more-btn {
+    background: #DEDEDE;
+    display: block;
+    width: fit-content;
+    padding: 1rem 2rem;
+    border-radius: 28px;
+    font-size: 20px;
+    margin: 1rem auto 1rem auto;
+  }
+}
+
+.profile-friend {
+  display: flex;
+  width: 20vw;
+  margin: 1rem 1rem 0 1rem;
+
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 12px;
+    flex: 1;
+  }
+
+  &__name {
+    flex: 5;
+    text-align: center;
+    line-height: 60px;
+    font-size: 20px;
+  }
+}
+
+.profile-articles {
+  background: #EAEAEA;
+  border-radius: 20px;
+  margin: 0 2rem 2rem 2rem;
+
+  &-main-header {
+    text-align: center;
+    border-bottom: 1px solid #000;
+    padding-bottom: 1rem;
+  }
+}
+
+.profile-article {
+  display: flex;
+  padding: 1rem;
+
+  &:hover {
+    background: #DEDEDE;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: 1rem;
+  }
+
+  &__img {
+    border-radius: 16px;
+    width: 222px;
+    height: 164px;
+  }
+
+  &__left-col {
+
+  }
+
+  &__right-col {
+    margin-left: 1rem;
+  }
 }

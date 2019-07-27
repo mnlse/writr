@@ -1,0 +1,30 @@
+.prof-post{ "data-id" => article.id }
+  .post__left-col
+    = link_to article, class: "post__img-link" do
+      = image_tag article.image.url(:thumbnail), class: "post__img"
+  .post__right-col
+    = link_to article.category_name, browse_by_cat_path(article.category_slug_name), class: "post__catgr"
+    %h1.post__header
+      = link_to title_for_fp(article.title), article
+    .post__data
+      .post__data-item 
+        %div{ id: "rating-" + "#{article.id}" }
+      .post__data-item= pluralize(article.reading_time_in_mins, "minute")
+      .post__data-item
+        %a{ :href => "#" }= article.user.first_name + " " + article.user.last_name
+      .post__data-item
+        %i.far.fa-eye
+        = article.impressionist_count
+    = link_to article, class: "post__body" do
+      %p.post__body-text= truncate(strip_tags(article.body), length: 150)
+      %span.post__read-more Read More
+
+  :javascript
+      var options = {
+      
+        step_size: 0.1,
+        readonly: true,
+        initial_value: #{article.avg_rating} 
+      };
+
+      $("#rating-" + "#{article.id}").rate(options)

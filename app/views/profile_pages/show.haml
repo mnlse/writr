@@ -1,16 +1,32 @@
 .profile-bg
-  .profile-info
-    .profile-name Jane Doe
-    .profile-bio Amet unde eum enim vitae saepe. Sit reprehenderit assumenda laudantium quibusdam doloribus. Excepturi illum porro nostrum porro impedit tempore ipsam ducimus odit nihil. Eum nulla accusamus ratione amet iusto temporibus
+  .profile-row-info
+    .profile-col-left
+      .profile-name Jane Doe
+      = image_tag @user.avatar.url, class: "profile-avatar"
+    .profile-col-right
+      .profile-bio 
+        %h1 Bio
+        %hr
+        %p Amet unde eum enim vitae saepe. Sit reprehenderit assumenda laudantium quibusdam doloribus. Excepturi illum porro nostrum porro impedit tempore ipsam ducimus odit nihil. Eum nulla accusamus ratione amet iusto temporibus
 
 .profile-main-container
   .profile-friends
+    %h1.profile-friends-header Friends
+    - 3.times do
+      .profile-friend
+        = image_tag asset_url("post_sample_image.png"), class: "profile-friend__avatar"
+        .profile-friend__name John Doe
   .profile-articles
-    .profile-article
-      %h1 Hello World
-      %p Adipisicing libero eaque quisquam a dolorum. Consectetur consectetur doloremque nihil sapiente ducimus Qui tenetur sed aperiam soluta quas Ipsa totam nostrum repellendus unde maiores necessitatibus. Magni aliquid obcaecati ex temporibus sapiente. Id soluta dolores voluptatibus ducimus quibusdam eveniet. Dolores adipisci
+    %h1.profile-articles-main-header Articles
 
+    - @articles.each do |article|
+      = render partial: 'shared/profile_post', locals: { article: article }
+
+    %a.profile-load-more-btn{ href: "#" }
+      Load more
+        
 :scss
   .profile-bg {
     background: url("#{@user.profile_background.url(:medium)}");
+    background-size: cover;
   }

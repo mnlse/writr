@@ -49,6 +49,7 @@ Rails.application.routes.draw do
 
         collection do
           get 'provide_articles_as_html'
+          get 'provide_profile_page_articles_as_html'
           get 'provide_draft_articles_as_html'
           put 'publish_group'
           delete 'delete_group'

@@ -20,6 +20,19 @@ class Api::V1::CommentsController < ApplicationController
       @rating.comment.vote_count += 1
       @rating.comment.save
     end
+
+    is_positive = true
+
+    if @rating.comment.vote_count > 0
+      is_positive = true
+    else
+      is_positive = false
+    end
+
+    render :json => {
+      is_positive: is_positive,
+      vote_count: @rating.comment.vote_count
+    }
   end
 
   def downvote
@@ -37,5 +50,18 @@ class Api::V1::CommentsController < ApplicationController
       @rating.comment.vote_count -= 1
       @rating.comment.save
     end
+
+    is_positive = true
+
+    if @rating.comment.vote_count > 0
+      is_positive = true
+    else
+      is_positive = false
+    end
+
+    render :json => {
+      is_positive: is_positive,
+      vote_count: @rating.comment.vote_count
+    }
   end
 end
